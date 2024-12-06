@@ -6,30 +6,43 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C6CC47862D0347CA00ED9B43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC477C2D0347CA00ED9B43 /* AppDelegate.swift */; };
+		C6CC47872D0347CA00ED9B43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC47832D0347CA00ED9B43 /* SceneDelegate.swift */; };
+		C6CC47892D0347CA00ED9B43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6CC477D2D0347CA00ED9B43 /* Assets.xcassets */; };
+		C6CC478B2D0347CA00ED9B43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6CC47802D0347CA00ED9B43 /* LaunchScreen.storyboard */; };
+		C6CC478C2D0347CA00ED9B43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6CC47822D0347CA00ED9B43 /* Main.storyboard */; };
+		C6CC47942D03482300ED9B43 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC47932D03481A00ED9B43 /* FeedController.swift */; };
+		C6CC47962D03483C00ED9B43 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC47952D03483C00ED9B43 /* MainTabBarController.swift */; };
+		C6CC479B2D03484300ED9B43 /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC47982D03484300ED9B43 /* ImageSelectorController.swift */; };
+		C6CC479C2D03484300ED9B43 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC47992D03484300ED9B43 /* NotificationController.swift */; };
+		C6CC479D2D03484300ED9B43 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC479A2D03484300ED9B43 /* ProfileController.swift */; };
+		C6CC479E2D03484300ED9B43 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC47972D03484300ED9B43 /* SearchController.swift */; };
+		C6CC47A22D03484C00ED9B43 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC479F2D03484C00ED9B43 /* LoginController.swift */; };
+		C6CC47A32D03484C00ED9B43 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC47A02D03484C00ED9B43 /* RegisterController.swift */; };
+		C6CC47A52D03485800ED9B43 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC47A42D03485800ED9B43 /* Extensions.swift */; };
+		C6CC47A72D03485E00ED9B43 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC47A62D03485E00ED9B43 /* FeedCell.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C6CC47642D0347B200ED9B43 /* IOSX-Gibigram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOSX-Gibigram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6CC477C2D0347CA00ED9B43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C6CC477D2D0347CA00ED9B43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C6CC477E2D0347CA00ED9B43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6CC477F2D0347CA00ED9B43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C6CC47812D0347CA00ED9B43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C6CC47832D0347CA00ED9B43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C6CC47932D03481A00ED9B43 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		C6CC47952D03483C00ED9B43 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		C6CC47972D03484300ED9B43 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		C6CC47982D03484300ED9B43 /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
+		C6CC47992D03484300ED9B43 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		C6CC479A2D03484300ED9B43 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		C6CC479F2D03484C00ED9B43 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		C6CC47A02D03484C00ED9B43 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		C6CC47A42D03485800ED9B43 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C6CC47A62D03485E00ED9B43 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C6CC47762D0347B300ED9B43 /* Exceptions for "IOSX-Gibigram" folder in "IOSX-Gibigram" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = C6CC47632D0347B200ED9B43 /* IOSX-Gibigram */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		C6CC47662D0347B200ED9B43 /* IOSX-Gibigram */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				C6CC47762D0347B300ED9B43 /* Exceptions for "IOSX-Gibigram" folder in "IOSX-Gibigram" target */,
-			);
-			path = "IOSX-Gibigram";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C6CC47612D0347B200ED9B43 /* Frameworks */ = {
@@ -45,7 +58,7 @@
 		C6CC475B2D0347B200ED9B43 = {
 			isa = PBXGroup;
 			children = (
-				C6CC47662D0347B200ED9B43 /* IOSX-Gibigram */,
+				C6CC47852D0347CA00ED9B43 /* IOSX-Gibigram */,
 				C6CC47652D0347B200ED9B43 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +69,85 @@
 				C6CC47642D0347B200ED9B43 /* IOSX-Gibigram.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C6CC47852D0347CA00ED9B43 /* IOSX-Gibigram */ = {
+			isa = PBXGroup;
+			children = (
+				C6CC47922D03480000ED9B43 /* Utils */,
+				C6CC47912D0347FC00ED9B43 /* Api */,
+				C6CC47902D0347F700ED9B43 /* Controller */,
+				C6CC478F2D0347F100ED9B43 /* ViewModel */,
+				C6CC478E2D0347EB00ED9B43 /* View */,
+				C6CC478D2D0347E400ED9B43 /* Model */,
+				C6CC477C2D0347CA00ED9B43 /* AppDelegate.swift */,
+				C6CC47832D0347CA00ED9B43 /* SceneDelegate.swift */,
+				C6CC477D2D0347CA00ED9B43 /* Assets.xcassets */,
+				C6CC477E2D0347CA00ED9B43 /* Info.plist */,
+				C6CC47802D0347CA00ED9B43 /* LaunchScreen.storyboard */,
+				C6CC47822D0347CA00ED9B43 /* Main.storyboard */,
+			);
+			path = "IOSX-Gibigram";
+			sourceTree = "<group>";
+		};
+		C6CC478D2D0347E400ED9B43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C6CC478E2D0347EB00ED9B43 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C6CC47A62D03485E00ED9B43 /* FeedCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C6CC478F2D0347F100ED9B43 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C6CC47902D0347F700ED9B43 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C6CC47A12D03484C00ED9B43 /* Authentication */,
+				C6CC47972D03484300ED9B43 /* SearchController.swift */,
+				C6CC47982D03484300ED9B43 /* ImageSelectorController.swift */,
+				C6CC47992D03484300ED9B43 /* NotificationController.swift */,
+				C6CC479A2D03484300ED9B43 /* ProfileController.swift */,
+				C6CC47952D03483C00ED9B43 /* MainTabBarController.swift */,
+				C6CC47932D03481A00ED9B43 /* FeedController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C6CC47912D0347FC00ED9B43 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		C6CC47922D03480000ED9B43 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C6CC47A42D03485800ED9B43 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C6CC47A12D03484C00ED9B43 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				C6CC479F2D03484C00ED9B43 /* LoginController.swift */,
+				C6CC47A02D03484C00ED9B43 /* RegisterController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +164,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				C6CC47662D0347B200ED9B43 /* IOSX-Gibigram */,
 			);
 			name = "IOSX-Gibigram";
 			packageProductDependencies = (
@@ -122,6 +211,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6CC47892D0347CA00ED9B43 /* Assets.xcassets in Resources */,
+				C6CC478B2D0347CA00ED9B43 /* LaunchScreen.storyboard in Resources */,
+				C6CC478C2D0347CA00ED9B43 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +224,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6CC47862D0347CA00ED9B43 /* AppDelegate.swift in Sources */,
+				C6CC479B2D03484300ED9B43 /* ImageSelectorController.swift in Sources */,
+				C6CC479C2D03484300ED9B43 /* NotificationController.swift in Sources */,
+				C6CC479D2D03484300ED9B43 /* ProfileController.swift in Sources */,
+				C6CC479E2D03484300ED9B43 /* SearchController.swift in Sources */,
+				C6CC47A72D03485E00ED9B43 /* FeedCell.swift in Sources */,
+				C6CC47942D03482300ED9B43 /* FeedController.swift in Sources */,
+				C6CC47A22D03484C00ED9B43 /* LoginController.swift in Sources */,
+				C6CC47A32D03484C00ED9B43 /* RegisterController.swift in Sources */,
+				C6CC47962D03483C00ED9B43 /* MainTabBarController.swift in Sources */,
+				C6CC47A52D03485800ED9B43 /* Extensions.swift in Sources */,
+				C6CC47872D0347CA00ED9B43 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C6CC47802D0347CA00ED9B43 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C6CC477F2D0347CA00ED9B43 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C6CC47822D0347CA00ED9B43 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C6CC47812D0347CA00ED9B43 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C6CC47782D0347B300ED9B43 /* Debug */ = {
