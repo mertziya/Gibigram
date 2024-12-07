@@ -22,6 +22,8 @@
 		C6CC47A32D03484C00ED9B43 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC47A02D03484C00ED9B43 /* RegisterController.swift */; };
 		C6CC47A52D03485800ED9B43 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC47A42D03485800ED9B43 /* Extensions.swift */; };
 		C6CC47A72D03485E00ED9B43 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC47A62D03485E00ED9B43 /* FeedCell.swift */; };
+		C6CC47AA2D038D4400ED9B43 /* CustomTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC47A92D038D4000ED9B43 /* CustomTextFields.swift */; };
+		C6CC47AC2D03916800ED9B43 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC47AB2D03915F00ED9B43 /* CustomButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		C6CC47A02D03484C00ED9B43 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		C6CC47A42D03485800ED9B43 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C6CC47A62D03485E00ED9B43 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		C6CC47A92D038D4000ED9B43 /* CustomTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFields.swift; sourceTree = "<group>"; };
+		C6CC47AB2D03915F00ED9B43 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		C6CC478E2D0347EB00ED9B43 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C6CC47AF2D039A6C00ED9B43 /* CustomUIElements */,
 				C6CC47A62D03485E00ED9B43 /* FeedCell.swift */,
 			);
 			path = View;
@@ -148,6 +153,15 @@
 				C6CC47A02D03484C00ED9B43 /* RegisterController.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		C6CC47AF2D039A6C00ED9B43 /* CustomUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				C6CC47AB2D03915F00ED9B43 /* CustomButtons.swift */,
+				C6CC47A92D038D4000ED9B43 /* CustomTextFields.swift */,
+			);
+			path = CustomUIElements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,10 +240,12 @@
 			files = (
 				C6CC47862D0347CA00ED9B43 /* AppDelegate.swift in Sources */,
 				C6CC479B2D03484300ED9B43 /* ImageSelectorController.swift in Sources */,
+				C6CC47AC2D03916800ED9B43 /* CustomButtons.swift in Sources */,
 				C6CC479C2D03484300ED9B43 /* NotificationController.swift in Sources */,
 				C6CC479D2D03484300ED9B43 /* ProfileController.swift in Sources */,
 				C6CC479E2D03484300ED9B43 /* SearchController.swift in Sources */,
 				C6CC47A72D03485E00ED9B43 /* FeedCell.swift in Sources */,
+				C6CC47AA2D038D4400ED9B43 /* CustomTextFields.swift in Sources */,
 				C6CC47942D03482300ED9B43 /* FeedController.swift in Sources */,
 				C6CC47A22D03484C00ED9B43 /* LoginController.swift in Sources */,
 				C6CC47A32D03484C00ED9B43 /* RegisterController.swift in Sources */,

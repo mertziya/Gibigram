@@ -25,7 +25,6 @@ extension MainTabBarController{
 
     func configureViewControllers(){
         
-        let layout = UICollectionViewFlowLayout() // It should be *** FLOW *** layout not just Layout
         
         let feed = templateNavigationController(unselectedImage: UIImage(systemName: "house")!, selectedImage: UIImage(systemName: "house.fill")!, rootViewController: FeedController())
         
