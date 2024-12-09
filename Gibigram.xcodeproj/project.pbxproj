@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		395DE248E312E97A93474EB5 /* Pods_Gibigram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541D0C0A47D5768AAB816B32 /* Pods_Gibigram.framework */; };
+		C6A95C1E2D07741E00FAD5CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6A95C1D2D07741E00FAD5CA /* GoogleService-Info.plist */; };
 		C6DC042F2D072DD000B8BCC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6DC04262D072DD000B8BCC9 /* Assets.xcassets */; };
 		C6DC04312D072DD000B8BCC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6DC04292D072DD000B8BCC9 /* LaunchScreen.storyboard */; };
 		C6DC04322D072DD000B8BCC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6DC042B2D072DD000B8BCC9 /* Main.storyboard */; };
@@ -29,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F70412B83B3668573967BA4 /* Pods-Gibigram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gibigram.debug.xcconfig"; path = "Target Support Files/Pods-Gibigram/Pods-Gibigram.debug.xcconfig"; sourceTree = "<group>"; };
+		393229FD5E981F7757772618 /* Pods-Gibigram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gibigram.release.xcconfig"; path = "Target Support Files/Pods-Gibigram/Pods-Gibigram.release.xcconfig"; sourceTree = "<group>"; };
+		541D0C0A47D5768AAB816B32 /* Pods_Gibigram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gibigram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6A95C1D2D07741E00FAD5CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C6DC040D2D072DC000B8BCC9 /* Gibigram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gibigram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6DC04252D072DD000B8BCC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6DC04262D072DD000B8BCC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,17 +63,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				395DE248E312E97A93474EB5 /* Pods_Gibigram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		187594CFBEC0C66FBE57F759 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F70412B83B3668573967BA4 /* Pods-Gibigram.debug.xcconfig */,
+				393229FD5E981F7757772618 /* Pods-Gibigram.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8E78B1B4AE9A07C9D0179A63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				541D0C0A47D5768AAB816B32 /* Pods_Gibigram.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6A95C1A2D07715D00FAD5CA /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		C6A95C1C2D07716B00FAD5CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C6DC04042D072DC000B8BCC9 = {
 			isa = PBXGroup;
 			children = (
 				C6DC042E2D072DD000B8BCC9 /* Gibigram */,
 				C6DC040E2D072DC000B8BCC9 /* Products */,
+				187594CFBEC0C66FBE57F759 /* Pods */,
+				8E78B1B4AE9A07C9D0179A63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,16 +122,17 @@
 		C6DC042E2D072DD000B8BCC9 /* Gibigram */ = {
 			isa = PBXGroup;
 			children = (
+				C6A95C1C2D07716B00FAD5CA /* Model */,
+				C6A95C1A2D07715D00FAD5CA /* Api */,
 				C6DC04372D072E1400B8BCC9 /* Utils */,
-				C6DC04382D072E1400B8BCC9 /* Api */,
 				C6DC04422D072E1400B8BCC9 /* Controller */,
 				C6DC04442D072E1400B8BCC9 /* ViewModel */,
 				C6DC044A2D072E1400B8BCC9 /* View */,
-				C6DC044B2D072E1400B8BCC9 /* Model */,
 				C6DC042C2D072DD000B8BCC9 /* SceneDelegate.swift */,
 				C6DC04252D072DD000B8BCC9 /* AppDelegate.swift */,
 				C6DC04262D072DD000B8BCC9 /* Assets.xcassets */,
 				C6DC04272D072DD000B8BCC9 /* Info.plist */,
+				C6A95C1D2D07741E00FAD5CA /* GoogleService-Info.plist */,
 				C6DC04292D072DD000B8BCC9 /* LaunchScreen.storyboard */,
 				C6DC042B2D072DD000B8BCC9 /* Main.storyboard */,
 			);
@@ -104,13 +145,6 @@
 				C6DC04362D072E1400B8BCC9 /* Extensions.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		C6DC04382D072E1400B8BCC9 /* Api */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Api;
 			sourceTree = "<group>";
 		};
 		C6DC043B2D072E1400B8BCC9 /* Authentication */ = {
@@ -163,13 +197,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		C6DC044B2D072E1400B8BCC9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,17 +204,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6DC04202D072DC100B8BCC9 /* Build configuration list for PBXNativeTarget "Gibigram" */;
 			buildPhases = (
+				8DD9A636EF822DED413F33D4 /* [CP] Check Pods Manifest.lock */,
 				C6DC04092D072DC000B8BCC9 /* Sources */,
 				C6DC040A2D072DC000B8BCC9 /* Frameworks */,
 				C6DC040B2D072DC000B8BCC9 /* Resources */,
+				5DDA90D34B11A838E1723BD2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Gibigram;
-			packageProductDependencies = (
-			);
 			productName = Gibigram;
 			productReference = C6DC040D2D072DC000B8BCC9 /* Gibigram.app */;
 			productType = "com.apple.product-type.application";
@@ -232,12 +259,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6DC042F2D072DD000B8BCC9 /* Assets.xcassets in Resources */,
+				C6A95C1E2D07741E00FAD5CA /* GoogleService-Info.plist in Resources */,
 				C6DC04312D072DD000B8BCC9 /* LaunchScreen.storyboard in Resources */,
 				C6DC04322D072DD000B8BCC9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5DDA90D34B11A838E1723BD2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gibigram/Pods-Gibigram-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gibigram/Pods-Gibigram-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gibigram/Pods-Gibigram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DD9A636EF822DED413F33D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gibigram-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C6DC04092D072DC000B8BCC9 /* Sources */ = {
@@ -287,14 +357,19 @@
 /* Begin XCBuildConfiguration section */
 		C6DC04212D072DC100B8BCC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F70412B83B3668573967BA4 /* Pods-Gibigram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J4QF7K26GP;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gibigram/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "WANT USE CAMERA";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "WANT USE MICROPHONE";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "WANT USE LIBRARY";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -315,14 +390,19 @@
 		};
 		C6DC04222D072DC100B8BCC9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 393229FD5E981F7757772618 /* Pods-Gibigram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J4QF7K26GP;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gibigram/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "WANT USE CAMERA";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "WANT USE MICROPHONE";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "WANT USE LIBRARY";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

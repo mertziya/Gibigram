@@ -1,0 +1,15 @@
+# Ignore the Pods directory to avoid pushing dependencies
+Pods/
+
+# Ignore CocoaPods generated files that are not needed in the repository
+*.xcworkspace
+!Podfile
+!Podfile.lock
+
+# Ignore build artifacts and temporary files
+build/
+*.app
+*.ipa
+*.dSYM
+*.xcuserstate
+DerivedData/
