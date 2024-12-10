@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		395DE248E312E97A93474EB5 /* Pods_Gibigram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541D0C0A47D5768AAB816B32 /* Pods_Gibigram.framework */; };
-		C6A95C1E2D07741E00FAD5CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6A95C1D2D07741E00FAD5CA /* GoogleService-Info.plist */; };
+		C6A95C202D08393C00FAD5CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6A95C1F2D08393C00FAD5CA /* GoogleService-Info.plist */; };
+		C6A95C222D08450B00FAD5CA /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A95C212D08450400FAD5CA /* ImageUploader.swift */; };
+		C6A95C242D08451B00FAD5CA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A95C232D08451800FAD5CA /* AuthService.swift */; };
+		C6A95C272D08C2A100FAD5CA /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A95C262D08C29C00FAD5CA /* ProfileCell.swift */; };
+		C6A95C292D08D96A00FAD5CA /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A95C282D08D96600FAD5CA /* ProfileHeader.swift */; };
 		C6DC042F2D072DD000B8BCC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6DC04262D072DD000B8BCC9 /* Assets.xcassets */; };
 		C6DC04312D072DD000B8BCC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6DC04292D072DD000B8BCC9 /* LaunchScreen.storyboard */; };
 		C6DC04322D072DD000B8BCC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6DC042B2D072DD000B8BCC9 /* Main.storyboard */; };
@@ -34,7 +38,11 @@
 		1F70412B83B3668573967BA4 /* Pods-Gibigram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gibigram.debug.xcconfig"; path = "Target Support Files/Pods-Gibigram/Pods-Gibigram.debug.xcconfig"; sourceTree = "<group>"; };
 		393229FD5E981F7757772618 /* Pods-Gibigram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gibigram.release.xcconfig"; path = "Target Support Files/Pods-Gibigram/Pods-Gibigram.release.xcconfig"; sourceTree = "<group>"; };
 		541D0C0A47D5768AAB816B32 /* Pods_Gibigram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gibigram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6A95C1D2D07741E00FAD5CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C6A95C1F2D08393C00FAD5CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C6A95C212D08450400FAD5CA /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		C6A95C232D08451800FAD5CA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		C6A95C262D08C29C00FAD5CA /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		C6A95C282D08D96600FAD5CA /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		C6DC040D2D072DC000B8BCC9 /* Gibigram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gibigram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6DC04252D072DD000B8BCC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6DC04262D072DD000B8BCC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,11 +95,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C6A95C1A2D07715D00FAD5CA /* Api */ = {
+		C6A95C1A2D07715D00FAD5CA /* API */ = {
 			isa = PBXGroup;
 			children = (
+				C6A95C232D08451800FAD5CA /* AuthService.swift */,
+				C6A95C212D08450400FAD5CA /* ImageUploader.swift */,
 			);
-			path = Api;
+			path = API;
 			sourceTree = "<group>";
 		};
 		C6A95C1C2D07716B00FAD5CA /* Model */ = {
@@ -99,6 +109,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C6A95C252D08C29300FAD5CA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C6A95C282D08D96600FAD5CA /* ProfileHeader.swift */,
+				C6A95C262D08C29C00FAD5CA /* ProfileCell.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		C6DC04042D072DC000B8BCC9 = {
@@ -122,17 +141,17 @@
 		C6DC042E2D072DD000B8BCC9 /* Gibigram */ = {
 			isa = PBXGroup;
 			children = (
-				C6A95C1C2D07716B00FAD5CA /* Model */,
-				C6A95C1A2D07715D00FAD5CA /* Api */,
+				C6A95C1A2D07715D00FAD5CA /* API */,
 				C6DC04372D072E1400B8BCC9 /* Utils */,
 				C6DC04422D072E1400B8BCC9 /* Controller */,
-				C6DC04442D072E1400B8BCC9 /* ViewModel */,
+				C6A95C1C2D07716B00FAD5CA /* Model */,
 				C6DC044A2D072E1400B8BCC9 /* View */,
+				C6DC04442D072E1400B8BCC9 /* ViewModel */,
 				C6DC042C2D072DD000B8BCC9 /* SceneDelegate.swift */,
 				C6DC04252D072DD000B8BCC9 /* AppDelegate.swift */,
 				C6DC04262D072DD000B8BCC9 /* Assets.xcassets */,
 				C6DC04272D072DD000B8BCC9 /* Info.plist */,
-				C6A95C1D2D07741E00FAD5CA /* GoogleService-Info.plist */,
+				C6A95C1F2D08393C00FAD5CA /* GoogleService-Info.plist */,
 				C6DC04292D072DD000B8BCC9 /* LaunchScreen.storyboard */,
 				C6DC042B2D072DD000B8BCC9 /* Main.storyboard */,
 			);
@@ -191,6 +210,7 @@
 		C6DC044A2D072E1400B8BCC9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C6A95C252D08C29300FAD5CA /* Profile */,
 				C6DC04482D072E1400B8BCC9 /* CustomUIElements */,
 				C6DC04492D072E1400B8BCC9 /* FeedCell.swift */,
 			);
@@ -259,7 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6DC042F2D072DD000B8BCC9 /* Assets.xcassets in Resources */,
-				C6A95C1E2D07741E00FAD5CA /* GoogleService-Info.plist in Resources */,
+				C6A95C202D08393C00FAD5CA /* GoogleService-Info.plist in Resources */,
 				C6DC04312D072DD000B8BCC9 /* LaunchScreen.storyboard in Resources */,
 				C6DC04322D072DD000B8BCC9 /* Main.storyboard in Resources */,
 			);
@@ -316,10 +336,13 @@
 			files = (
 				C6DC04332D072DD000B8BCC9 /* AppDelegate.swift in Sources */,
 				C6DC044C2D072E1400B8BCC9 /* AuthenticationVM.swift in Sources */,
+				C6A95C222D08450B00FAD5CA /* ImageUploader.swift in Sources */,
+				C6A95C242D08451B00FAD5CA /* AuthService.swift in Sources */,
 				C6DC044D2D072E1400B8BCC9 /* MainTabBarController.swift in Sources */,
 				C6DC044E2D072E1400B8BCC9 /* ProfileController.swift in Sources */,
 				C6DC044F2D072E1400B8BCC9 /* LoginController.swift in Sources */,
 				C6DC04502D072E1400B8BCC9 /* ImageSelectorController.swift in Sources */,
+				C6A95C292D08D96A00FAD5CA /* ProfileHeader.swift in Sources */,
 				C6DC04512D072E1400B8BCC9 /* Extensions.swift in Sources */,
 				C6DC04522D072E1400B8BCC9 /* SearchController.swift in Sources */,
 				C6DC04532D072E1400B8BCC9 /* FeedController.swift in Sources */,
@@ -327,6 +350,7 @@
 				C6DC04552D072E1400B8BCC9 /* CustomButtons.swift in Sources */,
 				C6DC04562D072E1400B8BCC9 /* NotificationController.swift in Sources */,
 				C6DC04572D072E1400B8BCC9 /* FeedCell.swift in Sources */,
+				C6A95C272D08C2A100FAD5CA /* ProfileCell.swift in Sources */,
 				C6DC04582D072E1400B8BCC9 /* RegisterController.swift in Sources */,
 				C6DC04592D072E1400B8BCC9 /* Background.swift in Sources */,
 				C6DC04342D072DD000B8BCC9 /* SceneDelegate.swift in Sources */,

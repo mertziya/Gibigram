@@ -6,14 +6,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureViewControllers()
-        
+        showAuthenticationIfNotLoggedIn()
     }
     
 }
@@ -26,6 +26,7 @@ extension MainTabBarController{
     func configureViewControllers(){
         
         
+        
         let feed = templateNavigationController(unselectedImage: UIImage(systemName: "house")!, selectedImage: UIImage(systemName: "house.fill")!, rootViewController: FeedController())
         
         let search = templateNavigationController(unselectedImage: UIImage(systemName: "magnifyingglass")!, selectedImage: UIImage(systemName: "magnifyingglass")!, rootViewController: SearchController())
@@ -34,14 +35,15 @@ extension MainTabBarController{
         
         let notification = templateNavigationController(unselectedImage: UIImage(systemName: "heart")!, selectedImage: UIImage(systemName: "heart.fill")!, rootViewController: NotificationController())
         
-        let profile = templateNavigationController(unselectedImage: UIImage(systemName: "person.crop.circle")!, selectedImage: UIImage(systemName: "person.crop.circle.fill")!, rootViewController: ProfileController())
+        let profileFlowLayout = UICollectionViewFlowLayout()
+        let profile = templateNavigationController(unselectedImage: UIImage(systemName: "person.crop.circle")!, selectedImage: UIImage(systemName: "person.crop.circle.fill")!, rootViewController: ProfileController(collectionViewLayout: profileFlowLayout) )
         
-        viewControllers = [feed, search , imageSelector, notification , profile] // the segueway for other viewcontrollers listed on tabbar
+        self.viewControllers = [feed, search , imageSelector, notification , profile] // the segueway for other viewcontrollers listed on tabbar
        
         
         self.tabBar.tintColor = .black
         self.tabBar.backgroundColor = .systemGray2
-        
+    
         
     }
     
@@ -57,4 +59,22 @@ extension MainTabBarController{
         return nav
     }
     
+    
+}
+
+
+
+
+
+extension MainTabBarController{
+    func showAuthenticationIfNotLoggedIn(){
+        if Auth.auth().currentUser == nil{
+            DispatchQueue.main.async {
+                let controller = LoginController()
+                let loginNavigation = UINavigationController(rootViewController: controller)
+                loginNavigation.modalPresentationStyle = .fullScreen
+                self.present(loginNavigation, animated: true, completion: nil)
+            }
+        }
+    }
 }

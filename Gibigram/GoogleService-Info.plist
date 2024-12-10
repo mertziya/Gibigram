@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyAD-UNETltEjSx9B4ulchP1YtfodKLDqhg</string>
+	<string>AIzaSyBJEyG4MZe9-H5S4301ao-VNMgWhe5scUk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>997877543240</string>
+	<string>331686944850</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.mertziya.Gibigram</string>
 	<key>PROJECT_ID</key>
-	<string>gibig-b519b</string>
+	<string>gibigram-12e39</string>
 	<key>STORAGE_BUCKET</key>
-	<string>gibig-b519b.firebasestorage.app</string>
+	<string>gibigram-12e39.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:997877543240:ios:c3d86a8da464d05398c37d</string>
+	<string>1:331686944850:ios:bc84710a6c4f011d6b3f8b</string>
 </dict>
 </plist>

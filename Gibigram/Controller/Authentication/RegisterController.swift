@@ -8,7 +8,7 @@
 import UIKit
 
 class RegisterController: UIViewController {
-    
+    let imageUpload = ImageUploader()
     var registerVM = registerationViewModel()
 
     
@@ -39,8 +39,10 @@ class RegisterController: UIViewController {
         return CustomTextFields.authTextField(type: .standard, placeholder: "Username")
     }()
     
-    private let signupButton : UIButton = {
-        return CustomButtons.authButton(theTitle: "Sign Up")
+    private lazy var signupButton : UIButton = {
+        let button = CustomButtons.authButton(theTitle: "Sign Up")
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
+        return button
     }()
     
     private let alreadyHaveAccount : UIButton = {
@@ -66,8 +68,8 @@ class RegisterController: UIViewController {
         
         view.addSubview(plusPhotoButton)
         plusPhotoButton.centerX(inView: view)
-        plusPhotoButton.anchor(top: view.topAnchor, paddingTop: 50)
-        plusPhotoButton.setDimensions(height: 175, width: 175)
+        plusPhotoButton.anchor(top: view.topAnchor, paddingTop: 75)
+        plusPhotoButton.setDimensions(height: 125, width: 125)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
@@ -132,6 +134,26 @@ extension RegisterController {
         
     }
     
+    @objc func handleSignUp(){
+        guard let email = emailField.text else {return}
+        guard let password = passwordField.text else {return}
+        guard let username = username.text else {return}
+        guard let fullname = fullname.text else {return}
+        guard let profileImage = plusPhotoButton.image(for: .normal) else {return}
+        
+        let credentials = AuthCredentials(email: email, password: password, username: username, fullname: fullname, profileImage: profileImage)
+        
+        AuthService.registerUserFirebase(credentials: credentials) { error in
+            if let error = error{
+                print("error registiring the user" , error.localizedDescription)
+                return
+            }else{
+                self.dismiss(animated: true, completion: nil)
+            }
+            
+        }
+    }
+    
 }
 
 
@@ -145,7 +167,7 @@ extension RegisterController: UIImagePickerControllerDelegate , UINavigationCont
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let selectedImage = info[.originalImage] as? UIImage else{print("error while selecting image") ; return}
+        guard let selectedImage = info[.editedImage] as? UIImage else{print("error while selecting image") ; return}
         
         // Apply aspectFill to the button's imageView
         if let imageView = plusPhotoButton.imageView {
@@ -159,6 +181,8 @@ extension RegisterController: UIImagePickerControllerDelegate , UINavigationCont
         plusPhotoButton.setImage(selectedImage.withRenderingMode(.alwaysOriginal), for: .normal)
         
         self.dismiss(animated: true, completion: nil)
+        
+        
     }
         
 }

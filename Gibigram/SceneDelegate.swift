@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,10 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
         
-        // Set up the initial view controller
-        let loginController = LoginController() // Replace with your initial view controller
-        let navigationController = UINavigationController(rootViewController: loginController)
-        window.rootViewController = navigationController
+        
+        let mainTabbar = MainTabBarController() // if user is logged in --> app will guide them to the main screen.
+        window.rootViewController = mainTabbar
         
         // Make the window visible
         window.makeKeyAndVisible()

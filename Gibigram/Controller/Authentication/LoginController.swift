@@ -29,8 +29,10 @@ class LoginController: UIViewController {
         return CustomTextFields.authTextField(type: .password , placeholder: "Password")
     }()
     
-    private let loginButton: UIButton = {
-        return CustomButtons.authButton(theTitle: "Sign In")
+    private lazy var loginButton: UIButton = {
+        let button = CustomButtons.authButton(theTitle: "Sign In")
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        return button
     }()
         
     private let dontHaveAnAccount : UIButton = {
@@ -56,6 +58,8 @@ class LoginController: UIViewController {
         configureUI()
         configureNotificationObservers()
         tapOutsideKeyboard()
+        
+        
     }
     
 }
@@ -124,7 +128,7 @@ extension LoginController {
 
 // MARK: - Actions:
 extension LoginController {
-    @objc func handleShowSignUp(){
+    @objc func handleShowSignUp(){ // cannot push view controller because the loginController is present not navigation.
         let controller = RegisterController()
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -143,6 +147,16 @@ extension LoginController {
         
         self.loginButton.alpha = loginVM.alphaValue
         self.loginButton.isEnabled = loginVM.formIsValid
+    }
+    
+    @objc func handleLogin(){
+        AuthService.loginUserFirebase(email: emailTextField.text!, password: passwordTextField.text!) { error in
+            if let error = error{
+                print("there is error: \(error.localizedDescription)")
+            }else{
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
 }

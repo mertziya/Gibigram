@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 
 class FeedController: UIViewController{
@@ -16,6 +17,8 @@ class FeedController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionViewFlowLayout()
+        addLogoutButtonToNav()
+        self.view.backgroundColor = .systemBackground
     }
     
 }
@@ -29,8 +32,8 @@ extension FeedController{
     private func setupCollectionViewFlowLayout(){
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: view.frame.width, height: 500)
-        layout.minimumLineSpacing = 1
+        layout.itemSize = CGSize(width: view.frame.width, height: 600)
+        layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 10
         
         self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -74,6 +77,26 @@ extension FeedController : UICollectionViewDataSource, UICollectionViewDelegate{
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? FeedCell else{print("error") ; return UICollectionViewCell()}
         return cell
     }
+}
+
+
+// MARK: - LogoutButton:
+extension FeedController{
+    func addLogoutButtonToNav(){
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(handleLogout))
+    }
     
-    
+    @objc func handleLogout(){
+        do{
+            try Auth.auth().signOut()
+            DispatchQueue.main.async {
+                let controller = LoginController()
+                let loginNavigation = UINavigationController(rootViewController: controller)
+                loginNavigation.modalPresentationStyle = .fullScreen
+                self.present(loginNavigation, animated: true, completion: nil)
+            }
+        }catch{
+            print("\n CANNOT SIGN OUT")
+        }
+    }
 }
