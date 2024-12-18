@@ -6,30 +6,23 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C6D90DE32D1358D200E526F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6D90DDC2D1358D200E526F3 /* Assets.xcassets */; };
+		C6D90DE52D1358D200E526F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6D90DDF2D1358D200E526F3 /* LaunchScreen.storyboard */; };
+		C6D90DE62D1358D200E526F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90DDB2D1358D200E526F3 /* AppDelegate.swift */; };
+		C6D90DE72D1358D200E526F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90DE02D1358D200E526F3 /* SceneDelegate.swift */; };
+		C6D90DE82D1358D200E526F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90DE12D1358D200E526F3 /* ViewController.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C6D90DC32D13468000E526F3 /* Gibigram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gibigram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6D90DDB2D1358D200E526F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C6D90DDC2D1358D200E526F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C6D90DDD2D1358D200E526F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6D90DDE2D1358D200E526F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C6D90DE02D1358D200E526F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C6D90DE12D1358D200E526F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C6D90DD52D13468200E526F3 /* Exceptions for "Gibigram" folder in "Gibigram" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = C6D90DC22D13468000E526F3 /* Gibigram */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		C6D90DC52D13468000E526F3 /* Gibigram */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				C6D90DD52D13468200E526F3 /* Exceptions for "Gibigram" folder in "Gibigram" target */,
-			);
-			path = Gibigram;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C6D90DC02D13468000E526F3 /* Frameworks */ = {
@@ -45,7 +38,7 @@
 		C6D90DBA2D13468000E526F3 = {
 			isa = PBXGroup;
 			children = (
-				C6D90DC52D13468000E526F3 /* Gibigram */,
+				C6D90DE22D1358D200E526F3 /* Gibigram */,
 				C6D90DC42D13468000E526F3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +49,19 @@
 				C6D90DC32D13468000E526F3 /* Gibigram.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C6D90DE22D1358D200E526F3 /* Gibigram */ = {
+			isa = PBXGroup;
+			children = (
+				C6D90DDB2D1358D200E526F3 /* AppDelegate.swift */,
+				C6D90DDC2D1358D200E526F3 /* Assets.xcassets */,
+				C6D90DDD2D1358D200E526F3 /* Info.plist */,
+				C6D90DDF2D1358D200E526F3 /* LaunchScreen.storyboard */,
+				C6D90DE02D1358D200E526F3 /* SceneDelegate.swift */,
+				C6D90DE12D1358D200E526F3 /* ViewController.swift */,
+			);
+			path = Gibigram;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +78,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				C6D90DC52D13468000E526F3 /* Gibigram */,
 			);
 			name = Gibigram;
 			packageProductDependencies = (
@@ -122,6 +125,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6D90DE32D1358D200E526F3 /* Assets.xcassets in Resources */,
+				C6D90DE52D1358D200E526F3 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +137,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6D90DE62D1358D200E526F3 /* AppDelegate.swift in Sources */,
+				C6D90DE72D1358D200E526F3 /* SceneDelegate.swift in Sources */,
+				C6D90DE82D1358D200E526F3 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C6D90DDF2D1358D200E526F3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C6D90DDE2D1358D200E526F3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C6D90DD72D13468200E526F3 /* Debug */ = {
@@ -150,7 +169,6 @@
 				INFOPLIST_FILE = Gibigram/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -178,7 +196,6 @@
 				INFOPLIST_FILE = Gibigram/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
