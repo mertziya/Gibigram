@@ -1,0 +1,9 @@
+# CocoaPods
+Pods/
+!.gitignore
+
+# Xcode
+xcuserdata/
+*.xcworkspace
+DerivedData/
+.idea/
