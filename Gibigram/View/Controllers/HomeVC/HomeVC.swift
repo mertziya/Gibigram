@@ -9,7 +9,7 @@ import UIKit
 
 class HomeVC: UIViewController {
     
-    // MARK: - UI Component:
+    // MARK: - UI Component:     
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -43,12 +43,16 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
                 print("DEBUG: couldn't get the cell")
                 return UITableViewCell()
             }
+            
             return cell
         }else{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "PostsCell", for: indexPath) as? PostCell else{
                 print("DEBUG: couldn't get the cell")
                 return UITableViewCell()
             }
+            
+            
+            
             return cell
         }
         
@@ -73,9 +77,14 @@ extension HomeVC {
         let notifications = UIBarButtonItem(image: UIImage.followings, style: .plain, target: self, action: #selector(toNotifications))
         let dms = UIBarButtonItem(image: UIImage.DMS, style: .plain, target: self, action: #selector(toDMS))
         
+        let camera = UIBarButtonItem(image: UIImage.camera, style: .plain, target: self, action: #selector(toCamera))
         
-        navigationItem.rightBarButtonItems = [notifications, dms]
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.camera, style: .plain, target: self, action: #selector(toCamera))
+        dms.tintColor = UIColor.label
+        notifications.tintColor = UIColor.label
+        camera.tintColor = UIColor.label
+        
+        navigationItem.rightBarButtonItems = [dms , notifications]
+        navigationItem.leftBarButtonItem = camera
         
        
         

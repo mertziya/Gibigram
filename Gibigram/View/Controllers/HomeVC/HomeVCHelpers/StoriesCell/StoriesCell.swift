@@ -11,7 +11,6 @@ class StoriesCell: UITableViewCell {
     // MARK: - UI Components:
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
     // MARK: - Lifecycles:
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,10 +32,6 @@ class StoriesCell: UITableViewCell {
 }
 
 
-
-
-
-
 extension StoriesCell : UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -49,10 +44,7 @@ extension StoriesCell : UICollectionViewDataSource, UICollectionViewDelegate {
             return UICollectionViewCell()
         }
         
-    
-        
         return cell
     }
-    
-    
 }
+

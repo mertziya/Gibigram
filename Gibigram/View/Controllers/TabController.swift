@@ -10,25 +10,39 @@ import UIKit
 
 class TabController : UITabBarController {
     
+    var isAuthenticated = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTabs()
         
-        self.tabBar.backgroundColor = .systemBackground
-        self.tabBar.tintColor = .green
+        if isAuthenticated{
+            setupTabs()
+            self.tabBar.backgroundColor = .systemBackground
+            self.tabBar.tintColor = .label
+        }else{
+            setupAuth()
+        }
+
     }
+    
+ 
     
     
     // MARK: - Tabbar setup:
     
     private func setupTabs(){
         // Navigation controllers that is being directed when the user selects the item from the tab bar menu.
-        let homeNav = createNavs(with: "Home", and: UIImage.homeScreen, vc: HomeVC())
-        let searchNav = createNavs(with: "Search", and: UIImage.search, vc: SearchVC())
-        let addpictureNav = createNavs(with: "Add", and: UIImage.addPicture, vc: AddPictureVC())
-        let likesNav = createNavs(with: "Likes", and: UIImage.followings, vc: LikesVC())
-        let profileNav = createNavs(with: "Profile", and: UIImage(systemName: "person.crop.circle")!, vc: ProfileVC())
+        let homeNav = createNavs(with: "Home", and: UIImage(systemName: "house")!, vc: HomeVC())
+        let searchNav = createNavs(with: "Search", and: UIImage(systemName: "magnifyingglass")!, vc: SearchVC())
+        let addpictureNav = createNavs(with: "Add", and: UIImage(systemName: "plus.square")!, vc: AddPictureVC())
+        let likesNav = createNavs(with: "Likes", and: UIImage(systemName: "heart")!, vc: LikesVC())
+        let profileNav = createNavs(with: "Profile", and: UIImage(systemName: "person.and.background.striped.horizontal")!, vc: ProfileVC())
+        
+        homeNav.tabBarItem.selectedImage = UIImage(systemName: "house.fill")
+        searchNav.tabBarItem.selectedImage = UIImage(systemName: "magnifyingglass.sparkle")
+        addpictureNav.tabBarItem.selectedImage = UIImage(systemName: "plus.square.fill")
+        likesNav.tabBarItem.selectedImage = UIImage(systemName: "heart.fill")
+        profileNav.tabBarItem.selectedImage = UIImage(systemName: "person.crop.circle.fill")
         
         self.setViewControllers([homeNav, searchNav, addpictureNav, likesNav, profileNav], animated: true)
 
@@ -55,4 +69,15 @@ class TabController : UITabBarController {
         return nav
     }
     
+    
+    private func setupAuth() {
+        DispatchQueue.main.async {
+            let vc = LoginVC()
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            nav.isModalInPresentation = true
+            
+            self.present(nav, animated: true)
+        }
+    }
 }

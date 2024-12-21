@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A5FC35D77F32959A3E8D914 /* Pods_Gibigram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7274571C161B4D740DB2FA4D /* Pods_Gibigram.framework */; };
 		C6A0B0302D142E25002C9420 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A0B02F2D142E25002C9420 /* Constants.swift */; };
 		C6A0B0352D157ADE002C9420 /* StoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A0B0332D157ADE002C9420 /* StoriesCell.swift */; };
 		C6A0B0362D157ADE002C9420 /* StoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6A0B0342D157ADE002C9420 /* StoriesCell.xib */; };
@@ -14,6 +15,10 @@
 		C6A0B03B2D157D56002C9420 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A0B0382D157D56002C9420 /* StoryCell.swift */; };
 		C6A0B03E2D15CBBD002C9420 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6A0B03D2D15CBBD002C9420 /* PostCell.xib */; };
 		C6A0B03F2D15CBBD002C9420 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A0B03C2D15CBBD002C9420 /* PostCell.swift */; };
+		C6B95A012D16BB8100175EAE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B959FF2D16BB8100175EAE /* LoginVC.swift */; };
+		C6B95A022D16BB8100175EAE /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B95A002D16BB8100175EAE /* LoginVC.xib */; };
+		C6B95A052D16BB9A00175EAE /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B95A032D16BB9A00175EAE /* RegisterVC.swift */; };
+		C6B95A062D16BB9A00175EAE /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B95A042D16BB9A00175EAE /* RegisterVC.xib */; };
 		C6D90DE32D1358D200E526F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6D90DDC2D1358D200E526F3 /* Assets.xcassets */; };
 		C6D90DE52D1358D200E526F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6D90DDF2D1358D200E526F3 /* LaunchScreen.storyboard */; };
 		C6D90DE62D1358D200E526F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90DDB2D1358D200E526F3 /* AppDelegate.swift */; };
@@ -29,9 +34,13 @@
 		C6D90E082D13902200E526F3 /* LikesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90E052D13902200E526F3 /* LikesVC.swift */; };
 		C6D90E0B2D13902E00E526F3 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6D90E0A2D13902E00E526F3 /* ProfileVC.xib */; };
 		C6D90E0C2D13902E00E526F3 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90E092D13902E00E526F3 /* ProfileVC.swift */; };
+		C6E325442D16B5340025F83C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6E325432D16B5340025F83C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59B5B3D7E8833A2C56C162E8 /* Pods-Gibigram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gibigram.release.xcconfig"; path = "Target Support Files/Pods-Gibigram/Pods-Gibigram.release.xcconfig"; sourceTree = "<group>"; };
+		7274571C161B4D740DB2FA4D /* Pods_Gibigram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gibigram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB467D8DA2EFCF228DAB3436 /* Pods-Gibigram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gibigram.debug.xcconfig"; path = "Target Support Files/Pods-Gibigram/Pods-Gibigram.debug.xcconfig"; sourceTree = "<group>"; };
 		C6A0B02F2D142E25002C9420 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C6A0B0332D157ADE002C9420 /* StoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCell.swift; sourceTree = "<group>"; };
 		C6A0B0342D157ADE002C9420 /* StoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoriesCell.xib; sourceTree = "<group>"; };
@@ -39,6 +48,10 @@
 		C6A0B0392D157D56002C9420 /* StoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
 		C6A0B03C2D15CBBD002C9420 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		C6A0B03D2D15CBBD002C9420 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		C6B959FF2D16BB8100175EAE /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		C6B95A002D16BB8100175EAE /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		C6B95A032D16BB9A00175EAE /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		C6B95A042D16BB9A00175EAE /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
 		C6D90DC32D13468000E526F3 /* Gibigram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gibigram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D90DDB2D1358D200E526F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6D90DDC2D1358D200E526F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +69,7 @@
 		C6D90E062D13902200E526F3 /* LikesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikesVC.xib; sourceTree = "<group>"; };
 		C6D90E092D13902E00E526F3 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		C6D90E0A2D13902E00E526F3 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		C6E325432D16B5340025F83C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +77,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A5FC35D77F32959A3E8D914 /* Pods_Gibigram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D26E67FD33D43FD5819FBDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7274571C161B4D740DB2FA4D /* Pods_Gibigram.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		934D223A34540D9B00BE9317 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB467D8DA2EFCF228DAB3436 /* Pods-Gibigram.debug.xcconfig */,
+				59B5B3D7E8833A2C56C162E8 /* Pods-Gibigram.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C6A0B02E2D142E16002C9420 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,11 +129,33 @@
 			path = PostCell;
 			sourceTree = "<group>";
 		};
+		C6B959FD2D16BAA300175EAE /* HomeVCHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				C6A0B0402D15CBC2002C9420 /* PostCell */,
+				C6A0B0372D157AE3002C9420 /* StoriesCell */,
+			);
+			path = HomeVCHelpers;
+			sourceTree = "<group>";
+		};
+		C6B959FE2D16BB5F00175EAE /* AuthVC */ = {
+			isa = PBXGroup;
+			children = (
+				C6B959FF2D16BB8100175EAE /* LoginVC.swift */,
+				C6B95A002D16BB8100175EAE /* LoginVC.xib */,
+				C6B95A032D16BB9A00175EAE /* RegisterVC.swift */,
+				C6B95A042D16BB9A00175EAE /* RegisterVC.xib */,
+			);
+			path = AuthVC;
+			sourceTree = "<group>";
+		};
 		C6D90DBA2D13468000E526F3 = {
 			isa = PBXGroup;
 			children = (
 				C6D90DE22D1358D200E526F3 /* Gibigram */,
 				C6D90DC42D13468000E526F3 /* Products */,
+				934D223A34540D9B00BE9317 /* Pods */,
+				8D26E67FD33D43FD5819FBDB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +178,7 @@
 				C6D90DDB2D1358D200E526F3 /* AppDelegate.swift */,
 				C6D90DDC2D1358D200E526F3 /* Assets.xcassets */,
 				C6D90DDD2D1358D200E526F3 /* Info.plist */,
+				C6E325432D16B5340025F83C /* GoogleService-Info.plist */,
 				C6D90DDF2D1358D200E526F3 /* LaunchScreen.storyboard */,
 				C6D90DE02D1358D200E526F3 /* SceneDelegate.swift */,
 			);
@@ -163,8 +218,6 @@
 		C6D90DED2D135A5D00E526F3 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				C6A0B0402D15CBC2002C9420 /* PostCell */,
-				C6A0B0372D157AE3002C9420 /* StoriesCell */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -172,6 +225,7 @@
 		C6D90DEE2D135A6300E526F3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C6B959FE2D16BB5F00175EAE /* AuthVC */,
 				C6D90DFA2D138FD800E526F3 /* ProfileVC */,
 				C6D90DF52D135EC100E526F3 /* LikesVC */,
 				C6D90DF42D135EC100E526F3 /* AddPictureVC */,
@@ -185,6 +239,7 @@
 		C6D90DF12D135EBB00E526F3 /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
+				C6B959FD2D16BAA300175EAE /* HomeVCHelpers */,
 				C6D90DF62D138F3C00E526F3 /* HomeVC.swift */,
 				C6D90DF72D138F3C00E526F3 /* HomeVC.xib */,
 			);
@@ -234,17 +289,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6D90DD62D13468200E526F3 /* Build configuration list for PBXNativeTarget "Gibigram" */;
 			buildPhases = (
+				F958351240B02C46F7834F75 /* [CP] Check Pods Manifest.lock */,
 				C6D90DBF2D13468000E526F3 /* Sources */,
 				C6D90DC02D13468000E526F3 /* Frameworks */,
 				C6D90DC12D13468000E526F3 /* Resources */,
+				CFD45211529CB5EA58D4BA98 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Gibigram;
-			packageProductDependencies = (
-			);
 			productName = Gibigram;
 			productReference = C6D90DC32D13468000E526F3 /* Gibigram.app */;
 			productType = "com.apple.product-type.application";
@@ -289,19 +344,64 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6D90DFD2D138FF900E526F3 /* SearchVC.xib in Resources */,
+				C6B95A062D16BB9A00175EAE /* RegisterVC.xib in Resources */,
 				C6A0B03A2D157D56002C9420 /* StoryCell.xib in Resources */,
 				C6A0B0362D157ADE002C9420 /* StoriesCell.xib in Resources */,
 				C6D90E072D13902200E526F3 /* LikesVC.xib in Resources */,
 				C6D90DE32D1358D200E526F3 /* Assets.xcassets in Resources */,
 				C6D90E012D13900E00E526F3 /* AddPictureVC.xib in Resources */,
+				C6B95A022D16BB8100175EAE /* LoginVC.xib in Resources */,
 				C6D90E0B2D13902E00E526F3 /* ProfileVC.xib in Resources */,
 				C6A0B03E2D15CBBD002C9420 /* PostCell.xib in Resources */,
+				C6E325442D16B5340025F83C /* GoogleService-Info.plist in Resources */,
 				C6D90DF82D138F3C00E526F3 /* HomeVC.xib in Resources */,
 				C6D90DE52D1358D200E526F3 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CFD45211529CB5EA58D4BA98 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gibigram/Pods-Gibigram-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gibigram/Pods-Gibigram-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gibigram/Pods-Gibigram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F958351240B02C46F7834F75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gibigram-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C6D90DBF2D13468000E526F3 /* Sources */ = {
@@ -317,7 +417,9 @@
 				C6A0B0302D142E25002C9420 /* Constants.swift in Sources */,
 				C6D90DF02D135AA300E526F3 /* TabController.swift in Sources */,
 				C6D90E082D13902200E526F3 /* LikesVC.swift in Sources */,
+				C6B95A012D16BB8100175EAE /* LoginVC.swift in Sources */,
 				C6D90E022D13900E00E526F3 /* AddPictureVC.swift in Sources */,
+				C6B95A052D16BB9A00175EAE /* RegisterVC.swift in Sources */,
 				C6A0B03B2D157D56002C9420 /* StoryCell.swift in Sources */,
 				C6A0B03F2D15CBBD002C9420 /* PostCell.swift in Sources */,
 			);
@@ -339,12 +441,14 @@
 /* Begin XCBuildConfiguration section */
 		C6D90DD72D13468200E526F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB467D8DA2EFCF228DAB3436 /* Pods-Gibigram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J4QF7K26GP;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gibigram/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -366,12 +470,14 @@
 		};
 		C6D90DD82D13468200E526F3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59B5B3D7E8833A2C56C162E8 /* Pods-Gibigram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J4QF7K26GP;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gibigram/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
