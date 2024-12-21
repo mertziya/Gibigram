@@ -19,6 +19,10 @@
 		C6B95A022D16BB8100175EAE /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B95A002D16BB8100175EAE /* LoginVC.xib */; };
 		C6B95A052D16BB9A00175EAE /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B95A032D16BB9A00175EAE /* RegisterVC.swift */; };
 		C6B95A062D16BB9A00175EAE /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B95A042D16BB9A00175EAE /* RegisterVC.xib */; };
+		C6B95A082D16FCBB00175EAE /* AuthLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B95A072D16FCBB00175EAE /* AuthLogic.swift */; };
+		C6B95A0A2D16FCE100175EAE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B95A092D16FCE100175EAE /* User.swift */; };
+		C6B95A0C2D17038C00175EAE /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B95A0B2D17038C00175EAE /* AuthViewModel.swift */; };
+		C6B95A0E2D17281A00175EAE /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B95A0D2D17281A00175EAE /* ImageUploader.swift */; };
 		C6D90DE32D1358D200E526F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6D90DDC2D1358D200E526F3 /* Assets.xcassets */; };
 		C6D90DE52D1358D200E526F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6D90DDF2D1358D200E526F3 /* LaunchScreen.storyboard */; };
 		C6D90DE62D1358D200E526F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90DDB2D1358D200E526F3 /* AppDelegate.swift */; };
@@ -52,6 +56,10 @@
 		C6B95A002D16BB8100175EAE /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		C6B95A032D16BB9A00175EAE /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		C6B95A042D16BB9A00175EAE /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
+		C6B95A072D16FCBB00175EAE /* AuthLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLogic.swift; sourceTree = "<group>"; };
+		C6B95A092D16FCE100175EAE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C6B95A0B2D17038C00175EAE /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		C6B95A0D2D17281A00175EAE /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		C6D90DC32D13468000E526F3 /* Gibigram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gibigram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D90DDB2D1358D200E526F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6D90DDC2D1358D200E526F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -188,6 +196,7 @@
 		C6D90DE92D135A3800E526F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C6B95A092D16FCE100175EAE /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,6 +213,7 @@
 		C6D90DEB2D135A3F00E526F3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C6B95A0B2D17038C00175EAE /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -211,6 +221,8 @@
 		C6D90DEC2D135A4900E526F3 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				C6B95A072D16FCBB00175EAE /* AuthLogic.swift */,
+				C6B95A0D2D17281A00175EAE /* ImageUploader.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -412,14 +424,18 @@
 				C6D90DFE2D138FF900E526F3 /* SearchVC.swift in Sources */,
 				C6D90DF92D138F3C00E526F3 /* HomeVC.swift in Sources */,
 				C6A0B0352D157ADE002C9420 /* StoriesCell.swift in Sources */,
+				C6B95A0A2D16FCE100175EAE /* User.swift in Sources */,
+				C6B95A0E2D17281A00175EAE /* ImageUploader.swift in Sources */,
 				C6D90DE72D1358D200E526F3 /* SceneDelegate.swift in Sources */,
 				C6D90E0C2D13902E00E526F3 /* ProfileVC.swift in Sources */,
+				C6B95A0C2D17038C00175EAE /* AuthViewModel.swift in Sources */,
 				C6A0B0302D142E25002C9420 /* Constants.swift in Sources */,
 				C6D90DF02D135AA300E526F3 /* TabController.swift in Sources */,
 				C6D90E082D13902200E526F3 /* LikesVC.swift in Sources */,
 				C6B95A012D16BB8100175EAE /* LoginVC.swift in Sources */,
 				C6D90E022D13900E00E526F3 /* AddPictureVC.swift in Sources */,
 				C6B95A052D16BB9A00175EAE /* RegisterVC.swift in Sources */,
+				C6B95A082D16FCBB00175EAE /* AuthLogic.swift in Sources */,
 				C6A0B03B2D157D56002C9420 /* StoryCell.swift in Sources */,
 				C6A0B03F2D15CBBD002C9420 /* PostCell.swift in Sources */,
 			);

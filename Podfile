@@ -9,5 +9,6 @@ target 'Gibigram' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'FirebaseMessaging'
-
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end

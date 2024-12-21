@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC" customModule="Gibigram" customModuleProvider="target">
             <connections>
+                <outlet property="emailTextField" destination="kbZ-qi-Du9" id="q4D-2M-z0Z"/>
                 <outlet property="forgetPassword" destination="fa5-8L-gyN" id="GQ7-xr-ml6"/>
                 <outlet property="loginButton" destination="Dih-0j-jjF" id="2g7-En-BJm"/>
                 <outlet property="passwordTextField" destination="9zH-aH-5iv" id="0sx-kb-sa4"/>
                 <outlet property="signUpLabel" destination="Xes-jt-6HR" id="tMT-85-dFd"/>
-                <outlet property="usernameTextField" destination="kbZ-qi-Du9" id="q4D-2M-z0Z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,7 +34,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="l9I-y8-YVt">
                     <rect key="frame" x="16" y="234.66666666666663" width="361" height="104"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kbZ-qi-Du9">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kbZ-qi-Du9">
                             <rect key="frame" x="0.0" y="0.0" width="361" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="vdN-Lp-wVz"/>
@@ -48,7 +48,7 @@
                                 <constraint firstAttribute="height" constant="44" id="UQ4-Zj-NWW"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                     </subviews>
                 </stackView>

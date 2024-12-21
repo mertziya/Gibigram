@@ -6,22 +6,23 @@
 //
 
 import Foundation
+import FirebaseAuth
 import UIKit
 
 class TabController : UITabBarController {
     
-    var isAuthenticated = false
+    var isAuthenticated = Auth.auth().currentUser != nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if isAuthenticated{
-            setupTabs()
-            self.tabBar.backgroundColor = .systemBackground
-            self.tabBar.tintColor = .label
-        }else{
-            setupAuth()
-        }
+        
+        setupTabs()
+        self.tabBar.backgroundColor = .systemBackground
+        self.tabBar.tintColor = .label
+        
+        if !isAuthenticated{ setupAuth() }
+        
 
     }
     

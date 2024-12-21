@@ -22,6 +22,7 @@ class RegisterVC: UIViewController {
         addSignInGesture()
         whenClickedOutsideDismissKeyboard()
         setupSignInButtonLogic()
+        setupSignInButton()
     }
     
     private func setupTextFields(){
@@ -88,5 +89,29 @@ extension RegisterVC {
         
         // Change button's background color alpha based on text fields' states
         self.SignInButton.isEnabled = shouldBeActive
+    }
+    
+    
+    private func setupSignInButton(){
+        self.SignInButton.addTarget(self, action: #selector(signedIn), for: .touchUpInside)
+        
+    }
+    
+    @objc private func signedIn(){
+        guard let email = emailTF.text else {return}
+        guard let password = passwordTF.text else {return}
+        guard let username = usernameTF.text else {return}
+        guard let fullname = fullnameTF.text else {return}
+        
+        let credentials = AuthCredentials(email: email, password: password, username: username, fullname: fullname)
+        
+        AuthLogic.registerUser(with: credentials) { error in
+            if let error = error {
+                print("DEBUG : \(error.localizedDescription)")
+            }else{
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        
     }
 }
