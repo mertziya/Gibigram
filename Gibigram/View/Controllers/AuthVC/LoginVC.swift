@@ -99,6 +99,17 @@ extension LoginVC {
         AuthLogic.loginUser(email: self.emailTextField.text!, password: passwordTextField.text!) { error in
             if let error = error {
                 print("DEBUG: \(error.localizedDescription)")
+                
+                let alertController = UIAlertController(
+                    title: "Error!"
+                    ,message: error.localizedDescription,
+                    preferredStyle: .alert
+                )
+                
+                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(okAction)
+                
+                self.present(alertController, animated: true, completion: nil)
             }else{
                 self.dismiss(animated: true, completion: nil)
             }

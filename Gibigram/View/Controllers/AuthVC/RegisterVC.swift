@@ -108,6 +108,20 @@ extension RegisterVC {
         AuthLogic.registerUser(with: credentials) { error in
             if let error = error {
                 print("DEBUG : \(error.localizedDescription)")
+                                
+                let alertController = UIAlertController(
+                    title: "Error!"
+                    ,message: error.localizedDescription
+                    ,preferredStyle: .alert
+                )
+                
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                
+                DispatchQueue.main.async {
+                    print("come to here.")
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }else{
                 self.dismiss(animated: true, completion: nil)
             }

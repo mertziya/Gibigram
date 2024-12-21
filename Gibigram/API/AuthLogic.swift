@@ -22,7 +22,7 @@ class AuthLogic {
     static func registerUser(with credentials : AuthCredentials , completion: @escaping (Error?) -> ()) {
         Auth.auth().createUser(withEmail: credentials.email, password: credentials.password) { result, error in
             if let error = error {
-                print("DEBUG: \(error.localizedDescription)\n")
+                completion(error)
             }
             guard let uid = result?.user.uid else {return}
             
