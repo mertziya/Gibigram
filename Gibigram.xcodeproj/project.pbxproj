@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A5FC35D77F32959A3E8D914 /* Pods_Gibigram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7274571C161B4D740DB2FA4D /* Pods_Gibigram.framework */; };
+		C661FBD12D189DE900415397 /* profilePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661FBD02D189DE900415397 /* profilePostCell.swift */; };
 		C6A0B0302D142E25002C9420 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A0B02F2D142E25002C9420 /* Constants.swift */; };
 		C6A0B0352D157ADE002C9420 /* StoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A0B0332D157ADE002C9420 /* StoriesCell.swift */; };
 		C6A0B0362D157ADE002C9420 /* StoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6A0B0342D157ADE002C9420 /* StoriesCell.xib */; };
@@ -45,6 +46,7 @@
 		59B5B3D7E8833A2C56C162E8 /* Pods-Gibigram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gibigram.release.xcconfig"; path = "Target Support Files/Pods-Gibigram/Pods-Gibigram.release.xcconfig"; sourceTree = "<group>"; };
 		7274571C161B4D740DB2FA4D /* Pods_Gibigram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gibigram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB467D8DA2EFCF228DAB3436 /* Pods-Gibigram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gibigram.debug.xcconfig"; path = "Target Support Files/Pods-Gibigram/Pods-Gibigram.debug.xcconfig"; sourceTree = "<group>"; };
+		C661FBD02D189DE900415397 /* profilePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profilePostCell.swift; sourceTree = "<group>"; };
 		C6A0B02F2D142E25002C9420 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C6A0B0332D157ADE002C9420 /* StoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCell.swift; sourceTree = "<group>"; };
 		C6A0B0342D157ADE002C9420 /* StoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoriesCell.xib; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		C6D90DFA2D138FD800E526F3 /* ProfileVC */ = {
 			isa = PBXGroup;
 			children = (
+				C661FBD02D189DE900415397 /* profilePostCell.swift */,
 				C6D90E092D13902E00E526F3 /* ProfileVC.swift */,
 				C6D90E0A2D13902E00E526F3 /* ProfileVC.xib */,
 			);
@@ -421,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6D90DE62D1358D200E526F3 /* AppDelegate.swift in Sources */,
+				C661FBD12D189DE900415397 /* profilePostCell.swift in Sources */,
 				C6D90DFE2D138FF900E526F3 /* SearchVC.swift in Sources */,
 				C6D90DF92D138F3C00E526F3 /* HomeVC.swift in Sources */,
 				C6A0B0352D157ADE002C9420 /* StoriesCell.swift in Sources */,
