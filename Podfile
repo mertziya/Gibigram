@@ -11,4 +11,7 @@ target 'Gibigram' do
   pod 'FirebaseMessaging'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Parse'
+  pod 'YPImagePicker'
+  pod 'Kingfisher', '~> 7.0'
 end

@@ -58,7 +58,7 @@ class TabController : UITabBarController {
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground() // Covers the entire area, including the status bar
-        appearance.backgroundColor = .clear        // Set the background color
+        appearance.backgroundColor = .systemBackground        // Set the background color
         
         nav.navigationBar.standardAppearance = appearance
         nav.navigationBar.scrollEdgeAppearance = appearance

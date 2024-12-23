@@ -8,7 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0A5FC35D77F32959A3E8D914 /* Pods_Gibigram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7274571C161B4D740DB2FA4D /* Pods_Gibigram.framework */; };
+		C6618D612D19A7FA00589650 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6618D602D19A7FA00589650 /* UserService.swift */; };
+		C6618D632D19A8BA00589650 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6618D622D19A8BA00589650 /* Post.swift */; };
+		C6618D652D19A8CF00589650 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6618D642D19A8CF00589650 /* Story.swift */; };
+		C6618D672D19D26F00589650 /* ProfileHeaderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6618D662D19D26F00589650 /* ProfileHeaderVM.swift */; };
 		C661FBD12D189DE900415397 /* profilePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661FBD02D189DE900415397 /* profilePostCell.swift */; };
+		C661FBDA2D1970C000415397 /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C661FBD92D1970C000415397 /* ProfileHeader.xib */; };
+		C661FBDB2D1970C000415397 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661FBD82D1970C000415397 /* ProfileHeader.swift */; };
 		C6A0B0302D142E25002C9420 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A0B02F2D142E25002C9420 /* Constants.swift */; };
 		C6A0B0352D157ADE002C9420 /* StoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A0B0332D157ADE002C9420 /* StoriesCell.swift */; };
 		C6A0B0362D157ADE002C9420 /* StoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6A0B0342D157ADE002C9420 /* StoriesCell.xib */; };
@@ -22,7 +28,6 @@
 		C6B95A062D16BB9A00175EAE /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B95A042D16BB9A00175EAE /* RegisterVC.xib */; };
 		C6B95A082D16FCBB00175EAE /* AuthLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B95A072D16FCBB00175EAE /* AuthLogic.swift */; };
 		C6B95A0A2D16FCE100175EAE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B95A092D16FCE100175EAE /* User.swift */; };
-		C6B95A0C2D17038C00175EAE /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B95A0B2D17038C00175EAE /* AuthViewModel.swift */; };
 		C6B95A0E2D17281A00175EAE /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B95A0D2D17281A00175EAE /* ImageUploader.swift */; };
 		C6D90DE32D1358D200E526F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6D90DDC2D1358D200E526F3 /* Assets.xcassets */; };
 		C6D90DE52D1358D200E526F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6D90DDF2D1358D200E526F3 /* LaunchScreen.storyboard */; };
@@ -37,7 +42,6 @@
 		C6D90E022D13900E00E526F3 /* AddPictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90DFF2D13900E00E526F3 /* AddPictureVC.swift */; };
 		C6D90E072D13902200E526F3 /* LikesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6D90E062D13902200E526F3 /* LikesVC.xib */; };
 		C6D90E082D13902200E526F3 /* LikesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90E052D13902200E526F3 /* LikesVC.swift */; };
-		C6D90E0B2D13902E00E526F3 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6D90E0A2D13902E00E526F3 /* ProfileVC.xib */; };
 		C6D90E0C2D13902E00E526F3 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90E092D13902E00E526F3 /* ProfileVC.swift */; };
 		C6E325442D16B5340025F83C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6E325432D16B5340025F83C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -46,7 +50,13 @@
 		59B5B3D7E8833A2C56C162E8 /* Pods-Gibigram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gibigram.release.xcconfig"; path = "Target Support Files/Pods-Gibigram/Pods-Gibigram.release.xcconfig"; sourceTree = "<group>"; };
 		7274571C161B4D740DB2FA4D /* Pods_Gibigram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gibigram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB467D8DA2EFCF228DAB3436 /* Pods-Gibigram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gibigram.debug.xcconfig"; path = "Target Support Files/Pods-Gibigram/Pods-Gibigram.debug.xcconfig"; sourceTree = "<group>"; };
+		C6618D602D19A7FA00589650 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		C6618D622D19A8BA00589650 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		C6618D642D19A8CF00589650 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		C6618D662D19D26F00589650 /* ProfileHeaderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderVM.swift; sourceTree = "<group>"; };
 		C661FBD02D189DE900415397 /* profilePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profilePostCell.swift; sourceTree = "<group>"; };
+		C661FBD82D1970C000415397 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		C661FBD92D1970C000415397 /* ProfileHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeader.xib; sourceTree = "<group>"; };
 		C6A0B02F2D142E25002C9420 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C6A0B0332D157ADE002C9420 /* StoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCell.swift; sourceTree = "<group>"; };
 		C6A0B0342D157ADE002C9420 /* StoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoriesCell.xib; sourceTree = "<group>"; };
@@ -60,7 +70,6 @@
 		C6B95A042D16BB9A00175EAE /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
 		C6B95A072D16FCBB00175EAE /* AuthLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLogic.swift; sourceTree = "<group>"; };
 		C6B95A092D16FCE100175EAE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C6B95A0B2D17038C00175EAE /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		C6B95A0D2D17281A00175EAE /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		C6D90DC32D13468000E526F3 /* Gibigram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gibigram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D90DDB2D1358D200E526F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +87,6 @@
 		C6D90E052D13902200E526F3 /* LikesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesVC.swift; sourceTree = "<group>"; };
 		C6D90E062D13902200E526F3 /* LikesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikesVC.xib; sourceTree = "<group>"; };
 		C6D90E092D13902E00E526F3 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		C6D90E0A2D13902E00E526F3 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		C6E325432D16B5340025F83C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				C6B95A092D16FCE100175EAE /* User.swift */,
+				C6618D622D19A8BA00589650 /* Post.swift */,
+				C6618D642D19A8CF00589650 /* Story.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,7 +225,7 @@
 		C6D90DEB2D135A3F00E526F3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C6B95A0B2D17038C00175EAE /* AuthViewModel.swift */,
+				C6618D662D19D26F00589650 /* ProfileHeaderVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -225,6 +235,7 @@
 			children = (
 				C6B95A072D16FCBB00175EAE /* AuthLogic.swift */,
 				C6B95A0D2D17281A00175EAE /* ImageUploader.swift */,
+				C6618D602D19A7FA00589650 /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -290,9 +301,10 @@
 		C6D90DFA2D138FD800E526F3 /* ProfileVC */ = {
 			isa = PBXGroup;
 			children = (
-				C661FBD02D189DE900415397 /* profilePostCell.swift */,
 				C6D90E092D13902E00E526F3 /* ProfileVC.swift */,
-				C6D90E0A2D13902E00E526F3 /* ProfileVC.xib */,
+				C661FBD02D189DE900415397 /* profilePostCell.swift */,
+				C661FBD82D1970C000415397 /* ProfileHeader.swift */,
+				C661FBD92D1970C000415397 /* ProfileHeader.xib */,
 			);
 			path = ProfileVC;
 			sourceTree = "<group>";
@@ -366,10 +378,10 @@
 				C6D90DE32D1358D200E526F3 /* Assets.xcassets in Resources */,
 				C6D90E012D13900E00E526F3 /* AddPictureVC.xib in Resources */,
 				C6B95A022D16BB8100175EAE /* LoginVC.xib in Resources */,
-				C6D90E0B2D13902E00E526F3 /* ProfileVC.xib in Resources */,
 				C6A0B03E2D15CBBD002C9420 /* PostCell.xib in Resources */,
 				C6E325442D16B5340025F83C /* GoogleService-Info.plist in Resources */,
 				C6D90DF82D138F3C00E526F3 /* HomeVC.xib in Resources */,
+				C661FBDA2D1970C000415397 /* ProfileHeader.xib in Resources */,
 				C6D90DE52D1358D200E526F3 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,7 +435,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6618D652D19A8CF00589650 /* Story.swift in Sources */,
 				C6D90DE62D1358D200E526F3 /* AppDelegate.swift in Sources */,
+				C6618D632D19A8BA00589650 /* Post.swift in Sources */,
 				C661FBD12D189DE900415397 /* profilePostCell.swift in Sources */,
 				C6D90DFE2D138FF900E526F3 /* SearchVC.swift in Sources */,
 				C6D90DF92D138F3C00E526F3 /* HomeVC.swift in Sources */,
@@ -431,11 +445,13 @@
 				C6B95A0A2D16FCE100175EAE /* User.swift in Sources */,
 				C6B95A0E2D17281A00175EAE /* ImageUploader.swift in Sources */,
 				C6D90DE72D1358D200E526F3 /* SceneDelegate.swift in Sources */,
+				C661FBDB2D1970C000415397 /* ProfileHeader.swift in Sources */,
 				C6D90E0C2D13902E00E526F3 /* ProfileVC.swift in Sources */,
-				C6B95A0C2D17038C00175EAE /* AuthViewModel.swift in Sources */,
+				C6618D672D19D26F00589650 /* ProfileHeaderVM.swift in Sources */,
 				C6A0B0302D142E25002C9420 /* Constants.swift in Sources */,
 				C6D90DF02D135AA300E526F3 /* TabController.swift in Sources */,
 				C6D90E082D13902200E526F3 /* LikesVC.swift in Sources */,
+				C6618D612D19A7FA00589650 /* UserService.swift in Sources */,
 				C6B95A012D16BB8100175EAE /* LoginVC.swift in Sources */,
 				C6D90E022D13900E00E526F3 /* AddPictureVC.swift in Sources */,
 				C6B95A052D16BB9A00175EAE /* RegisterVC.swift in Sources */,

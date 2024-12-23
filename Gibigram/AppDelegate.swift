@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseCore
+import Parse
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        let parseConfig = ParseClientConfiguration {
+            $0.applicationId = "SQ2eVuXYhk6rxCpfnPVNgMNeKMvQMFSiLL4eZrrQ" // Replace with your App ID
+            $0.clientKey = "KkB0AWjbJkmzbzDEWgyBU8BbKYzyTcC7poR1fDDS"         // Replace with your Client Key
+            $0.server = "https://parseapi.back4app.com" // Replace with your Parse Server URL
+        }
+        Parse.initialize(with: parseConfig)
+        
         return true
     }
 

@@ -33,6 +33,8 @@ class profilePostCell : UICollectionViewCell {
             postImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 1)
         ])
         
+    
+        
     }
     
     required init?(coder: NSCoder) {

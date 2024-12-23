@@ -9,8 +9,14 @@ import UIKit
 import FirebaseAuth
 
 class ProfileVC: UIViewController {
-    private let profileCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
+    // MARK: Properties:
+    private let profileCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private var pickedImage = UIImage()
+    private let imageUploader = ImageUploader()
+    
+    
+    // MARK: - Lifecycles:
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +28,7 @@ class ProfileVC: UIViewController {
         profileCollectionView.delegate = self
         profileCollectionView.dataSource = self
         profileCollectionView.register(profilePostCell.self, forCellWithReuseIdentifier: profilePostCell.reuseIdentifier)
+        profileCollectionView.register(UINib(nibName: "ProfileHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: ProfileHeader.theReuseIdentifier)
         
         layoutConfigForCollectionView()
         
@@ -33,6 +40,7 @@ class ProfileVC: UIViewController {
             profileCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
             profileCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
+        
     }
 
 }
@@ -40,7 +48,7 @@ class ProfileVC: UIViewController {
 
 
 // MARK: - Actions:
-extension ProfileVC {
+extension ProfileVC : UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     private func configureNavigationBar(){
         let bar = UIBarButtonItem(image: UIImage(systemName: "rectangle.portrait.and.arrow.right"), style: .plain, target: self, action: #selector(logoutUser))
         bar.tintColor = UIColor.label
@@ -58,13 +66,53 @@ extension ProfileVC {
             print("couldn't sign the user out.")
         }
     }
+    
+    private func didOpenImagePickerWhenClicked(theImageView : UIImageView) {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(openPicker))
+        theImageView.addGestureRecognizer(gesture)
+    }
+    
+    @objc private func openPicker(){
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .savedPhotosAlbum
+        picker.allowsEditing = true
+        
+        self.present(picker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[.editedImage] as? UIImage {
+            self.pickedImage = editedImage
+        }else if let originalImage = info[.originalImage] as? UIImage {
+            self.pickedImage = originalImage
+        }
+        
+        
+        imageUploader.uploadImage(image: pickedImage) { imageURL in
+            print("debug")
+            guard let url = imageURL else{print("DEBUG: bad URL") ; return}
+            UserService.addProfileImageURL(url: url) { error in
+                if let error = error {
+                    print("DEBUG: \(error.localizedDescription)")
+                }else{
+                    print("DEBUG: SUCCESS !")
+                }
+            }
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
 }
 
 
 
 
 // MARK: - Collection View Cell Configurations:
-extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource {
+extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         31
     }
@@ -100,5 +148,20 @@ extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource {
         
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let header = profileCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileHeader.theReuseIdentifier, for: indexPath) as? ProfileHeader else{
+            return UICollectionReusableView()
+        }
+        didOpenImagePickerWhenClicked(theImageView: header.profileImage)
+        
+        return header
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.size.width, height: view.frame.size.width * 0.67) // There is no stories section rn. Can be updated later.
+    }
     
 }

@@ -28,10 +28,16 @@ class AuthLogic {
             
             let data : [String : Any] = ["uid" : uid
                                          ,"email" : credentials.email
-                                         ,"password" : credentials.password
                                          ,"username" :  credentials.username
                                          ,"fullname" : credentials.fullname
-                                         ,"profileImageURL" : ""]
+                                         ,"password" : credentials.password
+                                         ,"summary" : ""
+                                         ,"profileImageURL" : ""
+                                         ,"posts" : [Post]()
+                                         ,"stories" : [Story]()
+                                         ,"followings" : [User]()
+                                         ,"followers" : [User]()
+            ]
             
             let users = Firestore.firestore().collection("users")
             users.document(uid).setData(data) { error in
