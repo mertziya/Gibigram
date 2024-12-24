@@ -18,7 +18,8 @@ class profilePostCell : UICollectionViewCell {
         iv.clipsToBounds = true
         return iv
     }()
-
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,6 +33,7 @@ class profilePostCell : UICollectionViewCell {
             postImage.rightAnchor.constraint(equalTo: rightAnchor, constant: 1),
             postImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 1)
         ])
+        
         
     
         

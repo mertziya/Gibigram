@@ -5,24 +5,59 @@
 //  Created by Mert Ziya on 23.12.2024.
 //
 
-import Foundation
-
-
+import Combine
 import FirebaseAuth
 import FirebaseFirestore
 
 struct UserService{
     
-    static func fetchUser(completion: @escaping (User?) -> () ) {
-        guard let uid = Auth.auth().currentUser?.uid else{return}
-        let userCollection = Firestore.firestore().collection("users")
-        userCollection.document(uid).getDocument(as: User.self) { result in
-            switch result{
-            case .failure(let error):
-                print("DEBUG: user cannot be fetched -> \(error.localizedDescription)")
-                completion(nil)
-            case .success(let user):
-                completion(user)
+    static func fetchUser() -> Future<User?, Never>{
+        return Future { promise in
+            guard let uid = Auth.auth().currentUser?.uid else{
+                promise(.success(nil))
+                return
+            }
+            
+            let userCollection = Firestore.firestore().collection("users")
+            userCollection.document(uid).getDocument(as: User.self) { result in
+                switch result {
+                case .failure(let error):
+                    print("DEBUG: user cannot be fetched")
+                    promise(.success(nil))
+                case .success(let user):
+                    promise(.success(user))
+                }
+            }
+        }
+    }
+    
+    static func updateUsername(withNew: String, completion: @escaping(Result<Void,Error>) -> ()){
+        guard let currentUid = Auth.auth().currentUser?.uid else {print("nil uid") ; return }
+        Firestore.firestore().collection("users").document(currentUid).updateData(["username" : withNew]) { error in
+            if let error = error{
+                completion(.failure(error))
+            }else{
+                completion(.success(()))
+            }
+        }
+    }
+    static func updateFullname(withNew: String, completion: @escaping(Result<Void,Error>) -> ()){
+        guard let currentUid = Auth.auth().currentUser?.uid else {print("nil uid") ; return }
+        Firestore.firestore().collection("users").document(currentUid).updateData(["fullname" : withNew]) { error in
+            if let error = error{
+                completion(.failure(error))
+            }else{
+                completion(.success(()))
+            }
+        }
+    }
+    static func updateSummary(withNew: String, completion: @escaping(Result<Void,Error>) -> ()){
+        guard let currentUid = Auth.auth().currentUser?.uid else {print("nil uid") ; return }
+        Firestore.firestore().collection("users").document(currentUid).updateData(["summary" : withNew]) { error in
+            if let error = error{
+                completion(.failure(error))
+            }else{
+                completion(.success(()))
             }
         }
     }
@@ -43,7 +78,9 @@ struct UserService{
                 completion(nil)
             }
         }
-        
+    }
+    
+    static func updateUser(){
         
     }
 }

@@ -12,6 +12,8 @@
 		C6618D632D19A8BA00589650 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6618D622D19A8BA00589650 /* Post.swift */; };
 		C6618D652D19A8CF00589650 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6618D642D19A8CF00589650 /* Story.swift */; };
 		C6618D672D19D26F00589650 /* ProfileHeaderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6618D662D19D26F00589650 /* ProfileHeaderVM.swift */; };
+		C6618D692D1AC55E00589650 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6618D682D1AC55E00589650 /* EditProfileVC.swift */; };
+		C6618D6B2D1B3E9100589650 /* StoriesCellForCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6618D6A2D1B3E9100589650 /* StoriesCellForCollectionView.swift */; };
 		C661FBD12D189DE900415397 /* profilePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661FBD02D189DE900415397 /* profilePostCell.swift */; };
 		C661FBDA2D1970C000415397 /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C661FBD92D1970C000415397 /* ProfileHeader.xib */; };
 		C661FBDB2D1970C000415397 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661FBD82D1970C000415397 /* ProfileHeader.swift */; };
@@ -54,6 +56,8 @@
 		C6618D622D19A8BA00589650 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C6618D642D19A8CF00589650 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		C6618D662D19D26F00589650 /* ProfileHeaderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderVM.swift; sourceTree = "<group>"; };
+		C6618D682D1AC55E00589650 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		C6618D6A2D1B3E9100589650 /* StoriesCellForCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCellForCollectionView.swift; sourceTree = "<group>"; };
 		C661FBD02D189DE900415397 /* profilePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profilePostCell.swift; sourceTree = "<group>"; };
 		C661FBD82D1970C000415397 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		C661FBD92D1970C000415397 /* ProfileHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeader.xib; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 		C6A0B0372D157AE3002C9420 /* StoriesCell */ = {
 			isa = PBXGroup;
 			children = (
+				C6618D6A2D1B3E9100589650 /* StoriesCellForCollectionView.swift */,
 				C6A0B0332D157ADE002C9420 /* StoriesCell.swift */,
 				C6A0B0342D157ADE002C9420 /* StoriesCell.xib */,
 				C6A0B0382D157D56002C9420 /* StoryCell.swift */,
@@ -305,6 +310,7 @@
 				C661FBD02D189DE900415397 /* profilePostCell.swift */,
 				C661FBD82D1970C000415397 /* ProfileHeader.swift */,
 				C661FBD92D1970C000415397 /* ProfileHeader.xib */,
+				C6618D682D1AC55E00589650 /* EditProfileVC.swift */,
 			);
 			path = ProfileVC;
 			sourceTree = "<group>";
@@ -441,6 +447,7 @@
 				C661FBD12D189DE900415397 /* profilePostCell.swift in Sources */,
 				C6D90DFE2D138FF900E526F3 /* SearchVC.swift in Sources */,
 				C6D90DF92D138F3C00E526F3 /* HomeVC.swift in Sources */,
+				C6618D6B2D1B3E9100589650 /* StoriesCellForCollectionView.swift in Sources */,
 				C6A0B0352D157ADE002C9420 /* StoriesCell.swift in Sources */,
 				C6B95A0A2D16FCE100175EAE /* User.swift in Sources */,
 				C6B95A0E2D17281A00175EAE /* ImageUploader.swift in Sources */,
@@ -448,6 +455,7 @@
 				C661FBDB2D1970C000415397 /* ProfileHeader.swift in Sources */,
 				C6D90E0C2D13902E00E526F3 /* ProfileVC.swift in Sources */,
 				C6618D672D19D26F00589650 /* ProfileHeaderVM.swift in Sources */,
+				C6618D692D1AC55E00589650 /* EditProfileVC.swift in Sources */,
 				C6A0B0302D142E25002C9420 /* Constants.swift in Sources */,
 				C6D90DF02D135AA300E526F3 /* TabController.swift in Sources */,
 				C6D90E082D13902200E526F3 /* LikesVC.swift in Sources */,

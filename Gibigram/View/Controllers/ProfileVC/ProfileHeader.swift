@@ -5,20 +5,21 @@
 //  Created by Mert Ziya on 23.12.2024.
 //
 
-import UIKit
 import Kingfisher
-import RxSwift
 import RxCocoa
+import Combine
+import UIKit
+
 
 
 class ProfileHeader: UICollectionReusableView {
     static let theReuseIdentifier = "headerViewIdentifier"
-    private let viewModel = ProfileHeaderVM()
-    private let disposeBag = DisposeBag()
-    
+    var viewModel = ProfileHeaderVM()
+    private var cancellables = Set<AnyCancellable>()
 
     
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
     @IBOutlet weak var postNumberLabel: UILabel!
     @IBOutlet weak var followerNumberLabel: UILabel!
@@ -34,12 +35,9 @@ class ProfileHeader: UICollectionReusableView {
         super.awakeFromNib()
         
         configureHeadingUI()
-        buttonClicked()
-        
         bindViewModel()
     }
-    
-    
+
     // Initialized the layers of the editProfileButton
     override func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
@@ -55,46 +53,53 @@ class ProfileHeader: UICollectionReusableView {
         
     }
     
-    
     private func bindViewModel() {
-        viewModel.userObservable
-            .observe(on: MainScheduler.instance) // Ensure UI updates happen on the main thread
-            .subscribe(onNext: { [weak self] user in
-                guard let self = self else { return }
-                self.updateUI(with: user)
-            })
-            .disposed(by: disposeBag)
-    }
-    
-    
-    private func updateUI(with user: User) {
-        profileNameLabel.text = user.username
-        profileSummaryLabel.text = user.summary
+        viewModel.$user
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] user in
+                self?.updateUI(with: user)
+            }
+            .store(in: &cancellables)
         
-        guard let stringURL = user.profileImageURL else{print("DEBUG : nil URL") ; return}
-        if let imageUrl = URL(string: stringURL) {
-            // Load the image (use an appropriate library or custom logic)
-            profileImage.kf.setImage(with: imageUrl)
+        viewModel.$isLoading
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isLoading in
+                self?.updateLoadingIndicator(isLoading: isLoading)
+            }
+            .store(in: &cancellables)
+    }
+
+    private func updateUI(with user: User?) {
+        if let user = user {
+            self.profileImage.kf.setImage(with: URL(string: user.profileImageURL!))
+            
+            self.postNumberLabel.text = String(describing: user.posts!.count)
+            self.followerNumberLabel.text = String(describing: user.followers!.count)
+            self.followingsNumberLabel.text = String(describing: user.followings!.count)
+            
+            self.profileNameLabel.text = user.username
+            self.profileSummaryLabel.text = user.summary
+                        
+        } else {
+            print("User = nil")
         }
-        
-        postNumberLabel.text = (String(describing: user.posts!.count))
-        followerNumberLabel.text = (String(describing: user.followers!.count))
-        followingsNumberLabel.text = (String(describing: user.followings!.count))
-        
-        
-        
-    }
-}
-
-
-
-// MARK: - Actions:
-extension ProfileHeader {
-    private func buttonClicked(){
-        editProfileButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
     }
     
-    @objc private func tappedButton(){
-        print("DEBUG: Edit profile tapped")
+    private func updateLoadingIndicator(isLoading : Bool) {
+        if isLoading{
+            self.profileImage.image = UIImage()
+            self.indicatorView.startAnimating()
+            
+            self.postNumberLabel.text = ""
+            self.followerNumberLabel.text = ""
+            self.followingsNumberLabel.text = ""
+            
+            self.profileNameLabel.text = ""
+            self.profileSummaryLabel.text = ""
+            
+        }else{
+            self.indicatorView.stopAnimating()
+        }
     }
+    
 }

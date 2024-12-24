@@ -7,13 +7,22 @@
 
 import UIKit
 import FirebaseAuth
+import Combine
 
 class ProfileVC: UIViewController {
     
     // MARK: Properties:
     private let profileCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    var isRefreshing = false
+    
     private var pickedImage = UIImage()
     private let imageUploader = ImageUploader()
+    private let profileHeaderVM = ProfileHeaderVM()
+    private var cancellables = Set<AnyCancellable>()
+    
+    var theUser : User? // For binding user.fullname to navigation title.
+    var canPrintMessage = true
+    var profileHeader: ProfileHeader?
     
     
     // MARK: - Lifecycles:
@@ -22,13 +31,19 @@ class ProfileVC: UIViewController {
 
         configureNavigationBar()
         configureProfileCollection()
+        bindNavTitle()
+        profileCollectionView.showsVerticalScrollIndicator = false
     }
     
     private func configureProfileCollection(){
         profileCollectionView.delegate = self
         profileCollectionView.dataSource = self
         profileCollectionView.register(profilePostCell.self, forCellWithReuseIdentifier: profilePostCell.reuseIdentifier)
+        
+        
+        profileCollectionView.register(StoriesCellForCollectionView.self, forCellWithReuseIdentifier: StoriesCellForCollectionView.identifier)
         profileCollectionView.register(UINib(nibName: "ProfileHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: ProfileHeader.theReuseIdentifier)
+        
         
         layoutConfigForCollectionView()
         
@@ -40,8 +55,18 @@ class ProfileVC: UIViewController {
             profileCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
             profileCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
-        
     }
+    
+    private func bindNavTitle(){
+        profileHeaderVM.$user
+            .receive(on: DispatchQueue.main)
+            .sink { user in
+                self.navigationItem.title = user?.fullname
+                self.theUser = user
+            }
+            .store(in: &cancellables)
+    }
+   
 
 }
 
@@ -104,8 +129,14 @@ extension ProfileVC : UIImagePickerControllerDelegate & UINavigationControllerDe
         self.dismiss(animated: true, completion: nil)
     }
     
+    private func didShowEditProfileWhenClicked(theButton : UIButton){
+        theButton.addTarget(self, action: #selector(showEditProfileVC), for: .touchUpInside)
+    }
     
-    
+    @objc private func showEditProfileVC(){
+        let vc = EditProfileVC()
+        self.present(vc, animated: true)
+    }
 }
 
 
@@ -117,16 +148,35 @@ extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
         31
     }
     
-
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: profilePostCell.reuseIdentifier, for: indexPath) as? profilePostCell
-        else{
-            return UICollectionViewCell()
-        }
-        cell.postImage.image = UIImage.yilmaz
+        if indexPath.row != 0 {
+            guard let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: profilePostCell.reuseIdentifier, for: indexPath) as? profilePostCell
+            else{
+                return UICollectionViewCell()
+            }
+            cell.postImage.image = UIImage.yilmaz
         
-        return cell
+            return cell
+        }else{
+            guard let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: StoriesCellForCollectionView.identifier, for: indexPath) as? StoriesCellForCollectionView else{
+                return UICollectionViewCell()
+            }
+            cell.collectionView.showsHorizontalScrollIndicator = false
+            
+            return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.row == 0 {
+            // Custom size for the first cell (e.g., StoriesCellForCollectionView)
+            return CGSize(width: collectionView.frame.width, height: 100) // Adjust height as needed
+        } else {
+            // Default size for other cells (profilePostCell)
+            let numberOfCellsPerRow: CGFloat = 3
+            let cellWidth = collectionView.frame.width / numberOfCellsPerRow
+            return CGSize(width: cellWidth, height: cellWidth) // Square cells
+        }
     }
     
     
@@ -153,10 +203,14 @@ extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
         guard let header = profileCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileHeader.theReuseIdentifier, for: indexPath) as? ProfileHeader else{
             return UICollectionReusableView()
         }
-        didOpenImagePickerWhenClicked(theImageView: header.profileImage)
-        
+        profileHeader = header
+        if let profileHeader = profileHeader{
+            didOpenImagePickerWhenClicked(theImageView: profileHeader.profileImage)
+            didShowEditProfileWhenClicked(theButton: header.editProfileButton)
+        }
         return header
     }
+    
     
     
     
@@ -164,4 +218,21 @@ extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
         return CGSize(width: view.frame.size.width, height: view.frame.size.width * 0.67) // There is no stories section rn. Can be updated later.
     }
     
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yOffSet = scrollView.contentOffset.y
+        
+        if yOffSet < -200 && canPrintMessage {
+            print("Scrolled to the top and beyond")
+            canPrintMessage = false
+            
+            profileHeader?.viewModel.updateUser() // Updates the viewmodel inside the data at the header
+            profileHeaderVM.updateUser() // Updates the current ViewModel.
+            self.profileCollectionView.reloadData() // Reloads the data of the collection view cells.
+            
+            DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                self.canPrintMessage = true
+            }
+        }
+    }
 }
