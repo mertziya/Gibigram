@@ -13,8 +13,7 @@ Gibigram is a mobile application designed to provide an Instagram-like experienc
 
 ## Current Demo
 
-https://github.com/user-attachments/assets/4eea57dc-3b4f-438b-9363-0d603064d1eb
-
+https://github.com/user-attachments/assets/2953ade6-d69f-4bca-abf8-534a2bd29598
 
 ## Technologies Used
 
