@@ -1,4 +1,5 @@
-# Gibigram
+# Gibigram 🚧
+![In Progress](https://img.shields.io/badge/Project-In%20Progress-yellow?style=for-the-badge)
 
 Gibigram is a fun project inspired by the famous sitcom *Gibi*, designed
 with the basic structure of an Instagram-like app. Only characters from
@@ -6,6 +7,16 @@ with the basic structure of an Instagram-like app. Only characters from
 
 The primary goal of this project was to understand the development phases
 of a medium-sized app while implementing modern programming practices.
+## Objectives
+
+- Understand the development lifecycle of a medium-sized app by usin MVVM Architecture.  
+- Using Protocol Oriented Programming (POP), to create Custom Delegate Patterns to use in ViewModel files for testability.
+- Used Firebase for the business logic of the app and Parse(with back4app) for storing the images of the app.
+- Practiced building interface both with XIB Files and programatically to have a collective understanding of User Interfaces.
+
+## Current Demo
+
+https://github.com/user-attachments/assets/d8124dc6-88e5-4b2e-9e4a-ecb2cc637862
 
 ## Features
 
@@ -16,23 +27,12 @@ of a medium-sized app while implementing modern programming practices.
   Combined `CollectionViews` and `TableViews` for smooth and dynamic scrolling, replicating Instagram's interface.  
 
 - **Image Picking**:  
-  Integrated the **YPImagePicker** library for an intuitive and user-friendly photo selection experience.  
+  Integrated the **YPImagePicker** library for instagram like image picking and editing experience.
 
 - **Backend Services**:  
   - **Firebase**: Serves as the primary database and Backend-as-a-Service (BaaS), managing the app's core business logic.  
-  - **Parse (via Back4App)**: Used exclusively for image storage, with image URLs stored in Firebase to keep logic centralized in Firebase. This approach avoids Firebase's paid storage feature.  
-
-## Current Demo
-
-https://github.com/user-attachments/assets/d8124dc6-88e5-4b2e-9e4a-ecb2cc637862
-
-## Objectives
-
-- Understand the development lifecycle of a medium-sized app.  
-- Practice and implement Protocol-Oriented Programming.  
-- Explore a hybrid backend approach using Firebase and Parse.  
-- Create a smooth and visually appealing UI with scrolling components.
-
+  - **Parse (via Back4App)**: Used exclusively for image storage, with image URLs stored in Firebase to keep logic centralized in Firebase. This approach avoids Firebase's paid storage feature.
+ 
 ## Status
 Completed:
 * Authentication Screens(Login, Register)
