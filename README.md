@@ -1,70 +1,55 @@
 # Gibigram
 
-Gibigram is a mobile application designed to provide an Instagram-like experience, focusing on streamlined image sharing and community interactions. The project is built with Swift, leveraging modern tools and frameworks to deliver a seamless user experience.
+Gibigram is a fun project inspired by the famous sitcom *Gibi*, designed
+with the basic structure of an Instagram-like app. Only characters from
+*Gibi* can use this app, making it a unique and entertaining experience.
 
----
+The primary goal of this project was to understand the development phases
+of a medium-sized app while implementing modern programming practices.
 
-## Current Features
+## Features
 
-- **Authentication Page**: Secure sign-in and registration system.
-- **Feed Page**: Displays a continuous scroll of images from followed users, supporting likes and comments.
+- **Protocol-Oriented Programming (POP)**:  
+  Used extensively to build delegates for ViewModel files, ensuring modular and reusable code.  
 
----
+- **Instagram-Like Scrolling Experience**:  
+  Combined `CollectionViews` and `TableViews` for smooth and dynamic scrolling, replicating Instagram's interface.  
+
+- **Image Picking**:  
+  Integrated the **YPImagePicker** library for an intuitive and user-friendly photo selection experience.  
+
+- **Backend Services**:  
+  - **Firebase**: Serves as the primary database and Backend-as-a-Service (BaaS), managing the app's core business logic.  
+  - **Parse (via Back4App)**: Used exclusively for image storage, with image URLs stored in Firebase to keep logic centralized in Firebase. This approach avoids Firebase's paid storage feature.  
 
 ## Current Demo
 
-https://github.com/user-attachments/assets/2953ade6-d69f-4bca-abf8-534a2bd29598
+https://github.com/user-attachments/assets/d8124dc6-88e5-4b2e-9e4a-ecb2cc637862
 
-## Technologies Used
+## Objectives
 
-- **YPImagePicker**: For intuitive and Instagram-like image selection.
-- **Parse and Back4App**: Used for backend image storage and data handling.
-- **Firestore Messaging**: Planned for real-time direct messaging.
+- Understand the development lifecycle of a medium-sized app.  
+- Practice and implement Protocol-Oriented Programming.  
+- Explore a hybrid backend approach using Firebase and Parse.  
+- Create a smooth and visually appealing UI with scrolling components.
 
----
+## Status
+Completed:
+* Authentication Screens(Login, Register)
+* Feed Screen
+* ProfileScreen
+* Edit Profile Screen
 
-## Upcoming Features
+In Progress:
+* Search Screen
+* Add Image Screen
+* Followings Screen
+* Direct Messaging Screen (Using FirebaseMessaging)
 
-### Core Screens
-1. **Search Screen**  
-   A screen to explore and search for other users and images.
+## Installation
 
-2. **Add Image Screen**  
-   A dedicated utility for uploading and editing images with captions.
-
-3. **Followings Screen**  
-   A screen to manage followers and following lists.
-
-4. **Profile Screen**  
-   Displays user details, including posts, bio, and profile image.
-
-5. **DM Screen**  
-   Real-time direct messaging with Firestore integration.
-
----
-
-## Future Goals
-
-1. **Enhance User Experience**  
-   - Implement smooth animations and transitions for better app flow.  
-   - Optimize image upload and download speeds.
-
-2. **Social Engagement Features**  
-   - Add notifications for likes, follows, and comments.  
-   - Introduce stories for time-bound image sharing.
-
-3. **Monetization**  
-   - Explore in-app purchases for premium filters and features.  
-   - Include ad integrations without compromising user experience.
-
-4. **Scalability**  
-   - Optimize database and backend performance for a growing user base.  
-   - Ensure the app is future-proof with modular architecture.
-
----
-
-## Setup and Installation
-
-1. Clone this repository:  
+1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/Gibigram.git
+   git clone https://github.com/your-repository/Gibigram.git
+   pod install
+   ```
