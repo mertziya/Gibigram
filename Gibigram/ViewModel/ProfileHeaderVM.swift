@@ -10,11 +10,15 @@ import FirebaseAuth
 import FirebaseFirestore
 import Combine
 
+
+
 class ProfileHeaderVM {
     @Published var user: User?
     @Published var isLoading: Bool = false
     private var cancellable = Set<AnyCancellable>()
     private var listener: ListenerRegistration?
+    
+    
     
     init() {
         fetchUser()
@@ -27,7 +31,7 @@ class ProfileHeaderVM {
     func fetchUser(){
         isLoading = true
     
-        UserService.fetchUser()
+        UserService.fetchCurrentUser()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 self?.isLoading = false

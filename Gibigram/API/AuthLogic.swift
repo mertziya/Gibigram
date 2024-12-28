@@ -33,8 +33,8 @@ class AuthLogic {
                                          ,"password" : credentials.password
                                          ,"summary" : ""
                                          ,"profileImageURL" : ""
-                                         ,"posts" : [Post]()
-                                         ,"stories" : [Story]()
+                                         ,"posts" : [String]()
+                                         ,"stories" : [String]()
                                          ,"followings" : [User]()
                                          ,"followers" : [User]()
             ]

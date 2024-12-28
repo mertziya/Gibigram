@@ -16,8 +16,8 @@ struct User: Codable{
     let password: String?
     let summary : String?
     let profileImageURL : String?
-    let posts : [Post]?
-    let stories : [Story]?
+    let posts : [String]? // contains the ids of the posts.
+    let stories : [String]?
     let followings : [User]?
     let followers : [User]?
 }

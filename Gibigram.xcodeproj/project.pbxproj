@@ -14,6 +14,8 @@
 		C6618D672D19D26F00589650 /* ProfileHeaderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6618D662D19D26F00589650 /* ProfileHeaderVM.swift */; };
 		C6618D692D1AC55E00589650 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6618D682D1AC55E00589650 /* EditProfileVC.swift */; };
 		C6618D6B2D1B3E9100589650 /* StoriesCellForCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6618D6A2D1B3E9100589650 /* StoriesCellForCollectionView.swift */; };
+		C6618D6D2D1B701700589650 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6618D6C2D1B701700589650 /* PostService.swift */; };
+		C6618D6F2D1C05B200589650 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6618D6E2D1C05B200589650 /* ProfileVM.swift */; };
 		C661FBD12D189DE900415397 /* profilePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661FBD02D189DE900415397 /* profilePostCell.swift */; };
 		C661FBDA2D1970C000415397 /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C661FBD92D1970C000415397 /* ProfileHeader.xib */; };
 		C661FBDB2D1970C000415397 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661FBD82D1970C000415397 /* ProfileHeader.swift */; };
@@ -24,6 +26,7 @@
 		C6A0B03B2D157D56002C9420 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A0B0382D157D56002C9420 /* StoryCell.swift */; };
 		C6A0B03E2D15CBBD002C9420 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6A0B03D2D15CBBD002C9420 /* PostCell.xib */; };
 		C6A0B03F2D15CBBD002C9420 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A0B03C2D15CBBD002C9420 /* PostCell.swift */; };
+		C6AB4E512D206A2E0070F07A /* StoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AB4E502D206A2E0070F07A /* StoryService.swift */; };
 		C6B95A012D16BB8100175EAE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B959FF2D16BB8100175EAE /* LoginVC.swift */; };
 		C6B95A022D16BB8100175EAE /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B95A002D16BB8100175EAE /* LoginVC.xib */; };
 		C6B95A052D16BB9A00175EAE /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B95A032D16BB9A00175EAE /* RegisterVC.swift */; };
@@ -58,6 +61,8 @@
 		C6618D662D19D26F00589650 /* ProfileHeaderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderVM.swift; sourceTree = "<group>"; };
 		C6618D682D1AC55E00589650 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		C6618D6A2D1B3E9100589650 /* StoriesCellForCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCellForCollectionView.swift; sourceTree = "<group>"; };
+		C6618D6C2D1B701700589650 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		C6618D6E2D1C05B200589650 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		C661FBD02D189DE900415397 /* profilePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profilePostCell.swift; sourceTree = "<group>"; };
 		C661FBD82D1970C000415397 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		C661FBD92D1970C000415397 /* ProfileHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeader.xib; sourceTree = "<group>"; };
@@ -68,6 +73,7 @@
 		C6A0B0392D157D56002C9420 /* StoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
 		C6A0B03C2D15CBBD002C9420 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		C6A0B03D2D15CBBD002C9420 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		C6AB4E502D206A2E0070F07A /* StoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryService.swift; sourceTree = "<group>"; };
 		C6B959FF2D16BB8100175EAE /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C6B95A002D16BB8100175EAE /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		C6B95A032D16BB9A00175EAE /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -231,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				C6618D662D19D26F00589650 /* ProfileHeaderVM.swift */,
+				C6618D6E2D1C05B200589650 /* ProfileVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -241,6 +248,8 @@
 				C6B95A072D16FCBB00175EAE /* AuthLogic.swift */,
 				C6B95A0D2D17281A00175EAE /* ImageUploader.swift */,
 				C6618D602D19A7FA00589650 /* UserService.swift */,
+				C6618D6C2D1B701700589650 /* PostService.swift */,
+				C6AB4E502D206A2E0070F07A /* StoryService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -452,6 +461,7 @@
 				C6B95A0A2D16FCE100175EAE /* User.swift in Sources */,
 				C6B95A0E2D17281A00175EAE /* ImageUploader.swift in Sources */,
 				C6D90DE72D1358D200E526F3 /* SceneDelegate.swift in Sources */,
+				C6AB4E512D206A2E0070F07A /* StoryService.swift in Sources */,
 				C661FBDB2D1970C000415397 /* ProfileHeader.swift in Sources */,
 				C6D90E0C2D13902E00E526F3 /* ProfileVC.swift in Sources */,
 				C6618D672D19D26F00589650 /* ProfileHeaderVM.swift in Sources */,
@@ -463,7 +473,9 @@
 				C6B95A012D16BB8100175EAE /* LoginVC.swift in Sources */,
 				C6D90E022D13900E00E526F3 /* AddPictureVC.swift in Sources */,
 				C6B95A052D16BB9A00175EAE /* RegisterVC.swift in Sources */,
+				C6618D6F2D1C05B200589650 /* ProfileVM.swift in Sources */,
 				C6B95A082D16FCBB00175EAE /* AuthLogic.swift in Sources */,
+				C6618D6D2D1B701700589650 /* PostService.swift in Sources */,
 				C6A0B03B2D157D56002C9420 /* StoryCell.swift in Sources */,
 				C6A0B03F2D15CBBD002C9420 /* PostCell.swift in Sources */,
 			);

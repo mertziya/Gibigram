@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import Combine
+import Kingfisher
 
 class ProfileVC: UIViewController {
     
@@ -20,21 +21,30 @@ class ProfileVC: UIViewController {
     private let profileHeaderVM = ProfileHeaderVM()
     private var cancellables = Set<AnyCancellable>()
     
+    private let profileVM = ProfileVM()
+    
     var theUser : User? // For binding user.fullname to navigation title.
     var canPrintMessage = true
     var profileHeader: ProfileHeader?
+    
+    var currentUserPosts = [Post]() // Holds the information about the current user's Post
+    var currentUserStories = [Story]() // Holds the information about the current user's Story
     
     
     // MARK: - Lifecycles:
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        profileVM.delegate = self
+        profileVM.fetchPostsOfCurrentUser()
+        profileVM.fetchStoriesOfCurrentUser()
+        
         configureNavigationBar()
-        configureProfileCollection()
+        self.configureProfileCollection()
         bindNavTitle()
         profileCollectionView.showsVerticalScrollIndicator = false
     }
     
+
     private func configureProfileCollection(){
         profileCollectionView.delegate = self
         profileCollectionView.dataSource = self
@@ -44,6 +54,8 @@ class ProfileVC: UIViewController {
         profileCollectionView.register(StoriesCellForCollectionView.self, forCellWithReuseIdentifier: StoriesCellForCollectionView.identifier)
         profileCollectionView.register(UINib(nibName: "ProfileHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: ProfileHeader.theReuseIdentifier)
         
+        profileCollectionView.alwaysBounceVertical = true // Independent from the items inside colelction view, Collection view is always scrollable !!!
+        // --> VERY USEFUL
         
         layoutConfigForCollectionView()
         
@@ -66,8 +78,8 @@ class ProfileVC: UIViewController {
             }
             .store(in: &cancellables)
     }
-   
-
+    
+ 
 }
 
 
@@ -143,10 +155,31 @@ extension ProfileVC : UIImagePickerControllerDelegate & UINavigationControllerDe
 
 
 // MARK: - Collection View Cell Configurations:
-extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        31
+extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProfileViewModelDelegate{
+    func didFetchPostsOfUser(_ posts: [Post]) {
+        self.currentUserPosts = posts
+        self.profileCollectionView.reloadData()
     }
+    
+    func didFetchStoriesOfUser(_ stories: [Story]) {
+        print("fetch stories triggered")
+        self.currentUserStories = stories
+        self.profileCollectionView.reloadData()
+    }
+    
+    func didFailWithError(_ error: any Error) {
+        print("stories error triggered")
+        self.currentUserStories = []
+        self.currentUserPosts = []
+        self.profileCollectionView.reloadData()
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.currentUserPosts.count + 1
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row != 0 {
@@ -154,19 +187,24 @@ extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
             else{
                 return UICollectionViewCell()
             }
-            cell.postImage.image = UIImage.yilmaz
-        
+            let post = self.currentUserPosts[indexPath.row - 1]
+            let url = URL(string: post.postImageURL ?? "")
+            cell.postImage.kf.setImage(with: url)
+
             return cell
         }else{
-            guard let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: StoriesCellForCollectionView.identifier, for: indexPath) as? StoriesCellForCollectionView else{
+            guard let storiesCell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: StoriesCellForCollectionView.identifier, for: indexPath) as? StoriesCellForCollectionView else{
                 return UICollectionViewCell()
             }
-            cell.collectionView.showsHorizontalScrollIndicator = false
             
-            return cell
+            storiesCell.collectionView.showsHorizontalScrollIndicator = false
+            storiesCell.stories = self.currentUserStories
+            
+            return storiesCell
         }
     }
     
+        
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.row == 0 {
             // Custom size for the first cell (e.g., StoriesCellForCollectionView)
@@ -229,6 +267,8 @@ extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
             profileHeader?.viewModel.updateUser() // Updates the viewmodel inside the data at the header
             profileHeaderVM.updateUser() // Updates the current ViewModel.
             self.profileCollectionView.reloadData() // Reloads the data of the collection view cells.
+            self.profileVM.fetchPostsOfCurrentUser()
+            self.profileVM.fetchStoriesOfCurrentUser()
             
             DispatchQueue.main.asyncAfter(deadline: .now()+2) {
                 self.canPrintMessage = true

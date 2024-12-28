@@ -10,26 +10,31 @@ import FirebaseAuth
 import FirebaseFirestore
 
 struct UserService{
-    
-    static func fetchUser() -> Future<User?, Never>{
-        return Future { promise in
-            guard let uid = Auth.auth().currentUser?.uid else{
-                promise(.success(nil))
-                return
-            }
-            
-            let userCollection = Firestore.firestore().collection("users")
-            userCollection.document(uid).getDocument(as: User.self) { result in
-                switch result {
-                case .failure(let error):
-                    print("DEBUG: user cannot be fetched")
-                    promise(.success(nil))
-                case .success(let user):
-                    promise(.success(user))
-                }
-            }
-        }
+
+    static func fetchCurrentUser() -> Future<User?, Never>{
+         return Future { promise in
+             guard let uid = Auth.auth().currentUser?.uid else{
+                 promise(.success(nil))
+                 return
+             }
+             
+             let userCollection = Firestore.firestore().collection("users")
+             userCollection.document(uid).getDocument(as: User.self) { result in
+                 switch result {
+                 case .failure(let error):
+                     print("DEBUG: user cannot be fetched")
+                     promise(.success(nil))
+                 case .success(let user):
+                     promise(.success(user))
+                 }
+             }
+         }
     }
+
+  
+
+    
+    
     
     static func updateUsername(withNew: String, completion: @escaping(Result<Void,Error>) -> ()){
         guard let currentUid = Auth.auth().currentUser?.uid else {print("nil uid") ; return }

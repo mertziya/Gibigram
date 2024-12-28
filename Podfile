@@ -12,4 +12,5 @@ target 'Gibigram' do
   pod 'Parse'
   pod 'YPImagePicker'
   pod 'Kingfisher', '~> 7.0'
+  
 end

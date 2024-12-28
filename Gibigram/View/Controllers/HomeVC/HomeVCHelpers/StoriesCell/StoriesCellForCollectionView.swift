@@ -13,6 +13,22 @@ class StoriesCellForCollectionView : UICollectionViewCell , UICollectionViewDele
     var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     static let identifier = "soriesCellForCollectionViewReuseIdentifier"
     
+    var stories :[Story] = []{
+        didSet{
+            print(stories.count)
+            DispatchQueue.main.async{
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
+    var isOpened : Bool = false{
+        didSet{
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
     
     // MARK: - Lifecycles:
     
@@ -40,14 +56,14 @@ class StoriesCellForCollectionView : UICollectionViewCell , UICollectionViewDele
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            collectionView.leftAnchor.constraint(equalTo: leftAnchor, constant: 0),
+            collectionView.leftAnchor.constraint(equalTo: leftAnchor, constant: 12),
             collectionView.rightAnchor.constraint(equalTo: rightAnchor, constant: 0),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
         ])
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return self.stories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,6 +71,9 @@ class StoriesCellForCollectionView : UICollectionViewCell , UICollectionViewDele
             print("DEBUG: Couldn't get the StoryCell")
             return UICollectionViewCell()
         }
+        cell.storyImage.kf.setImage(with: URL(string: self.stories[indexPath.row].storyImageURL ?? ""))
+        cell.storyName.text = self.stories[indexPath.row].storyName
+        cell.storyBounds.image = self.isOpened ? .storyBoundOpened : .storyBounds
         
         return cell
     }

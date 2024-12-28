@@ -8,5 +8,6 @@
 import Foundation
 
 struct Story : Codable{
-    
+    var storyImageURL : String?
+    var storyName: String?
 }

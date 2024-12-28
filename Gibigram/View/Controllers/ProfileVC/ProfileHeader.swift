@@ -15,6 +15,7 @@ import UIKit
 class ProfileHeader: UICollectionReusableView {
     static let theReuseIdentifier = "headerViewIdentifier"
     var viewModel = ProfileHeaderVM()
+    
     private var cancellables = Set<AnyCancellable>()
 
     
