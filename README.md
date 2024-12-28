@@ -1,71 +1,55 @@
-# Gibigram
+# Gibigram 🚧
+![In Progress](https://img.shields.io/badge/Project-In%20Progress-yellow?style=for-the-badge)
 
-Gibigram is a mobile application designed to provide an Instagram-like experience, focusing on streamlined image sharing and community interactions. The project is built with Swift, leveraging modern tools and frameworks to deliver a seamless user experience.
+Gibigram is a fun project inspired by the famous sitcom *Gibi*, designed
+with the basic structure of an Instagram-like app. Only characters from
+*Gibi* can use this app, making it a unique and entertaining experience.
 
----
+The primary goal of this project was to understand the development phases
+of a medium-sized app while implementing modern programming practices.
+## Objectives
 
-## Current Features
-
-- **Authentication Page**: Secure sign-in and registration system.
-- **Feed Page**: Displays a continuous scroll of images from followed users, supporting likes and comments.
-
----
+- Understand the development lifecycle of a medium-sized app by usin MVVM Architecture.  
+- Using Protocol Oriented Programming (POP), to create Custom Delegate Patterns to use in ViewModel files for testability.
+- Used Firebase for the business logic of the app and Parse(with back4app) for storing the images of the app.
+- Practiced building interface both with XIB Files and programatically to have a collective understanding of User Interfaces.
 
 ## Current Demo
 
-https://github.com/user-attachments/assets/4eea57dc-3b4f-438b-9363-0d603064d1eb
+https://github.com/user-attachments/assets/d8124dc6-88e5-4b2e-9e4a-ecb2cc637862
 
+## Features
 
-## Technologies Used
+- **Protocol-Oriented Programming (POP)**:  
+  Used extensively to build delegates for ViewModel files, ensuring modular and reusable code.  
 
-- **YPImagePicker**: For intuitive and Instagram-like image selection.
-- **Parse and Back4App**: Used for backend image storage and data handling.
-- **Firestore Messaging**: Planned for real-time direct messaging.
+- **Instagram-Like Scrolling Experience**:  
+  Combined `CollectionViews` and `TableViews` for smooth and dynamic scrolling, replicating Instagram's interface.  
 
----
+- **Image Picking**:  
+  Integrated the **YPImagePicker** library for instagram like image picking and editing experience.
 
-## Upcoming Features
+- **Backend Services**:  
+  - **Firebase**: Serves as the primary database and Backend-as-a-Service (BaaS), managing the app's core business logic.  
+  - **Parse (via Back4App)**: Used exclusively for image storage, with image URLs stored in Firebase to keep logic centralized in Firebase. This approach avoids Firebase's paid storage feature.
+ 
+## Status
+Completed:
+* Authentication Screens(Login, Register)
+* Feed Screen
+* ProfileScreen
+* Edit Profile Screen
 
-### Core Screens
-1. **Search Screen**  
-   A screen to explore and search for other users and images.
+In Progress:
+* Search Screen
+* Add Image Screen
+* Followings Screen
+* Direct Messaging Screen (Using FirebaseMessaging)
 
-2. **Add Image Screen**  
-   A dedicated utility for uploading and editing images with captions.
+## Installation
 
-3. **Followings Screen**  
-   A screen to manage followers and following lists.
-
-4. **Profile Screen**  
-   Displays user details, including posts, bio, and profile image.
-
-5. **DM Screen**  
-   Real-time direct messaging with Firestore integration.
-
----
-
-## Future Goals
-
-1. **Enhance User Experience**  
-   - Implement smooth animations and transitions for better app flow.  
-   - Optimize image upload and download speeds.
-
-2. **Social Engagement Features**  
-   - Add notifications for likes, follows, and comments.  
-   - Introduce stories for time-bound image sharing.
-
-3. **Monetization**  
-   - Explore in-app purchases for premium filters and features.  
-   - Include ad integrations without compromising user experience.
-
-4. **Scalability**  
-   - Optimize database and backend performance for a growing user base.  
-   - Ensure the app is future-proof with modular architecture.
-
----
-
-## Setup and Installation
-
-1. Clone this repository:  
+1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/Gibigram.git
+   git clone https://github.com/your-repository/Gibigram.git
+   pod install
+   ```
