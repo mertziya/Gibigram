@@ -53,6 +53,7 @@ class StoriesCellForCollectionView : UICollectionViewCell , UICollectionViewDele
     
     private func configureCollection(){
         addSubview(collectionView)
+        collectionView.alwaysBounceHorizontal = true
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
