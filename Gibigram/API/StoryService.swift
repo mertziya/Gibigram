@@ -10,6 +10,9 @@ import FirebaseAuth
 import FirebaseFirestore
 
 
+
+
+
 class StoryService{
     static func fetchStoriesOfCurrentUser(completion: @escaping (Result<[Story],Error>) -> ()) {
         guard let currentUserId = Auth.auth().currentUser?.uid else {
@@ -66,4 +69,41 @@ class StoryService{
             }
         }
     }
+    
+    
+    static func uploadStory(story : Story, completion : @escaping (Result<String,Error>)->() ){
+        let documentID = UUID().uuidString
+        let currentUID = Auth.auth().currentUser?.uid
+        let data : [String : Any] = [
+            "storyID" : documentID,
+            "userID" : currentUID ?? "",
+            "storyImageURL" : story.storyImageURL ?? "",
+            "storyDescription" : story.storyDescription ?? ""
+        ]
+
+        let collection = Firestore.firestore().collection("stories")
+        collection.document(documentID).setData(data) { error in
+            if let error = error{
+                completion(.failure(error))
+            }else{
+                completion(.success(documentID))
+            }
+        }
+    }
+    
+    static func addStoryToCurrentUser(storyID : String, completion: @escaping (Error?) -> () ){
+        guard let currentUID = Auth.auth().currentUser?.uid else{completion(ErrorType.userIDerror); return }
+        let currentDoc = Firestore.firestore().collection("users").document(currentUID)
+        
+        currentDoc.updateData(["stories" : FieldValue.arrayUnion([storyID])]) { error in
+            if let error = error{
+                completion(error)
+            }else{
+                completion(nil)
+            }
+        }
+        
+    }
+    
+    
 }

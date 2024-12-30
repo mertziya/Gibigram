@@ -27,6 +27,8 @@
 		C6A0B03E2D15CBBD002C9420 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6A0B03D2D15CBBD002C9420 /* PostCell.xib */; };
 		C6A0B03F2D15CBBD002C9420 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A0B03C2D15CBBD002C9420 /* PostCell.swift */; };
 		C6AB4E512D206A2E0070F07A /* StoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AB4E502D206A2E0070F07A /* StoryService.swift */; };
+		C6AB4E552D20954F0070F07A /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AB4E542D20954F0070F07A /* PostVC.swift */; };
+		C6AB4E572D20BD7D0070F07A /* StoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AB4E562D20BD7D0070F07A /* StoryVC.swift */; };
 		C6B95A012D16BB8100175EAE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B959FF2D16BB8100175EAE /* LoginVC.swift */; };
 		C6B95A022D16BB8100175EAE /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B95A002D16BB8100175EAE /* LoginVC.xib */; };
 		C6B95A052D16BB9A00175EAE /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B95A032D16BB9A00175EAE /* RegisterVC.swift */; };
@@ -43,12 +45,13 @@
 		C6D90DF92D138F3C00E526F3 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90DF62D138F3C00E526F3 /* HomeVC.swift */; };
 		C6D90DFD2D138FF900E526F3 /* SearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6D90DFC2D138FF900E526F3 /* SearchVC.xib */; };
 		C6D90DFE2D138FF900E526F3 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90DFB2D138FF900E526F3 /* SearchVC.swift */; };
-		C6D90E012D13900E00E526F3 /* AddPictureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6D90E002D13900E00E526F3 /* AddPictureVC.xib */; };
 		C6D90E022D13900E00E526F3 /* AddPictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90DFF2D13900E00E526F3 /* AddPictureVC.swift */; };
 		C6D90E072D13902200E526F3 /* LikesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6D90E062D13902200E526F3 /* LikesVC.xib */; };
 		C6D90E082D13902200E526F3 /* LikesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90E052D13902200E526F3 /* LikesVC.swift */; };
 		C6D90E0C2D13902E00E526F3 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90E092D13902E00E526F3 /* ProfileVC.swift */; };
 		C6E325442D16B5340025F83C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6E325432D16B5340025F83C /* GoogleService-Info.plist */; };
+		C6FF7AD42D2187E00052B8F5 /* ShareImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF7AD32D2187E00052B8F5 /* ShareImageVC.swift */; };
+		C6FF7AD62D21F49A0052B8F5 /* ShareImageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF7AD52D21F49A0052B8F5 /* ShareImageVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,8 @@
 		C6A0B03C2D15CBBD002C9420 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		C6A0B03D2D15CBBD002C9420 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		C6AB4E502D206A2E0070F07A /* StoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryService.swift; sourceTree = "<group>"; };
+		C6AB4E542D20954F0070F07A /* PostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
+		C6AB4E562D20BD7D0070F07A /* StoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryVC.swift; sourceTree = "<group>"; };
 		C6B959FF2D16BB8100175EAE /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C6B95A002D16BB8100175EAE /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		C6B95A032D16BB9A00175EAE /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -93,11 +98,12 @@
 		C6D90DFB2D138FF900E526F3 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		C6D90DFC2D138FF900E526F3 /* SearchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchVC.xib; sourceTree = "<group>"; };
 		C6D90DFF2D13900E00E526F3 /* AddPictureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPictureVC.swift; sourceTree = "<group>"; };
-		C6D90E002D13900E00E526F3 /* AddPictureVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPictureVC.xib; sourceTree = "<group>"; };
 		C6D90E052D13902200E526F3 /* LikesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesVC.swift; sourceTree = "<group>"; };
 		C6D90E062D13902200E526F3 /* LikesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikesVC.xib; sourceTree = "<group>"; };
 		C6D90E092D13902E00E526F3 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		C6E325432D16B5340025F83C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C6FF7AD32D2187E00052B8F5 /* ShareImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareImageVC.swift; sourceTree = "<group>"; };
+		C6FF7AD52D21F49A0052B8F5 /* ShareImageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareImageVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,22 @@
 				C6A0B03D2D15CBBD002C9420 /* PostCell.xib */,
 			);
 			path = PostCell;
+			sourceTree = "<group>";
+		};
+		C6AB4E522D2095180070F07A /* PostVC */ = {
+			isa = PBXGroup;
+			children = (
+				C6AB4E542D20954F0070F07A /* PostVC.swift */,
+			);
+			path = PostVC;
+			sourceTree = "<group>";
+		};
+		C6AB4E532D20953D0070F07A /* StoryVC */ = {
+			isa = PBXGroup;
+			children = (
+				C6AB4E562D20BD7D0070F07A /* StoryVC.swift */,
+			);
+			path = StoryVC;
 			sourceTree = "<group>";
 		};
 		C6B959FD2D16BAA300175EAE /* HomeVCHelpers */ = {
@@ -238,6 +260,7 @@
 			children = (
 				C6618D662D19D26F00589650 /* ProfileHeaderVM.swift */,
 				C6618D6E2D1C05B200589650 /* ProfileVM.swift */,
+				C6FF7AD52D21F49A0052B8F5 /* ShareImageVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -264,6 +287,8 @@
 		C6D90DEE2D135A6300E526F3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C6AB4E532D20953D0070F07A /* StoryVC */,
+				C6AB4E522D2095180070F07A /* PostVC */,
 				C6B959FE2D16BB5F00175EAE /* AuthVC */,
 				C6D90DFA2D138FD800E526F3 /* ProfileVC */,
 				C6D90DF52D135EC100E526F3 /* LikesVC */,
@@ -298,7 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				C6D90DFF2D13900E00E526F3 /* AddPictureVC.swift */,
-				C6D90E002D13900E00E526F3 /* AddPictureVC.xib */,
+				C6FF7AD32D2187E00052B8F5 /* ShareImageVC.swift */,
 			);
 			path = AddPictureVC;
 			sourceTree = "<group>";
@@ -391,7 +416,6 @@
 				C6A0B0362D157ADE002C9420 /* StoriesCell.xib in Resources */,
 				C6D90E072D13902200E526F3 /* LikesVC.xib in Resources */,
 				C6D90DE32D1358D200E526F3 /* Assets.xcassets in Resources */,
-				C6D90E012D13900E00E526F3 /* AddPictureVC.xib in Resources */,
 				C6B95A022D16BB8100175EAE /* LoginVC.xib in Resources */,
 				C6A0B03E2D15CBBD002C9420 /* PostCell.xib in Resources */,
 				C6E325442D16B5340025F83C /* GoogleService-Info.plist in Resources */,
@@ -456,20 +480,24 @@
 				C661FBD12D189DE900415397 /* profilePostCell.swift in Sources */,
 				C6D90DFE2D138FF900E526F3 /* SearchVC.swift in Sources */,
 				C6D90DF92D138F3C00E526F3 /* HomeVC.swift in Sources */,
+				C6FF7AD62D21F49A0052B8F5 /* ShareImageVM.swift in Sources */,
 				C6618D6B2D1B3E9100589650 /* StoriesCellForCollectionView.swift in Sources */,
 				C6A0B0352D157ADE002C9420 /* StoriesCell.swift in Sources */,
 				C6B95A0A2D16FCE100175EAE /* User.swift in Sources */,
 				C6B95A0E2D17281A00175EAE /* ImageUploader.swift in Sources */,
 				C6D90DE72D1358D200E526F3 /* SceneDelegate.swift in Sources */,
 				C6AB4E512D206A2E0070F07A /* StoryService.swift in Sources */,
+				C6AB4E552D20954F0070F07A /* PostVC.swift in Sources */,
 				C661FBDB2D1970C000415397 /* ProfileHeader.swift in Sources */,
 				C6D90E0C2D13902E00E526F3 /* ProfileVC.swift in Sources */,
 				C6618D672D19D26F00589650 /* ProfileHeaderVM.swift in Sources */,
 				C6618D692D1AC55E00589650 /* EditProfileVC.swift in Sources */,
 				C6A0B0302D142E25002C9420 /* Constants.swift in Sources */,
+				C6AB4E572D20BD7D0070F07A /* StoryVC.swift in Sources */,
 				C6D90DF02D135AA300E526F3 /* TabController.swift in Sources */,
 				C6D90E082D13902200E526F3 /* LikesVC.swift in Sources */,
 				C6618D612D19A7FA00589650 /* UserService.swift in Sources */,
+				C6FF7AD42D2187E00052B8F5 /* ShareImageVC.swift in Sources */,
 				C6B95A012D16BB8100175EAE /* LoginVC.swift in Sources */,
 				C6D90E022D13900E00E526F3 /* AddPictureVC.swift in Sources */,
 				C6B95A052D16BB9A00175EAE /* RegisterVC.swift in Sources */,

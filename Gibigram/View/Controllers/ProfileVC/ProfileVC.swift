@@ -155,7 +155,13 @@ extension ProfileVC : UIImagePickerControllerDelegate & UINavigationControllerDe
 
 
 // MARK: - Collection View Cell Configurations:
-extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProfileViewModelDelegate{
+extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ProfileViewModelDelegate, StoryCellDelegate{
+    
+    func didSelectStory(_ storyVC: StoryVC) {
+        storyVC.modalPresentationStyle = .fullScreen
+        self.present(storyVC, animated: false)
+    }
+    
     func didFetchPostsOfUser(_ posts: [Post]) {
         self.currentUserPosts = posts
         self.profileCollectionView.reloadData()
@@ -190,7 +196,7 @@ extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
             let post = self.currentUserPosts[indexPath.row - 1]
             let url = URL(string: post.postImageURL ?? "")
             cell.postImage.kf.setImage(with: url)
-
+            
             return cell
         }else{
             guard let storiesCell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: StoriesCellForCollectionView.identifier, for: indexPath) as? StoriesCellForCollectionView else{
@@ -199,8 +205,22 @@ extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
             
             storiesCell.collectionView.showsHorizontalScrollIndicator = false
             storiesCell.stories = self.currentUserStories
+            storiesCell.user = self.theUser
             
+            storiesCell.delegate = self // !!! DELEGATION For the StoryVC !!!!!!!!!!!!!
             return storiesCell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row != 0 {
+            let indexPost = self.currentUserPosts[indexPath.row-1]
+            let vc = PostVC()
+            vc.post = indexPost
+            vc.user = self.theUser
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
     
@@ -259,8 +279,7 @@ extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let yOffSet = scrollView.contentOffset.y
-        
-        if yOffSet < -200 && canPrintMessage {
+        if yOffSet < -150 && canPrintMessage {
             print("Scrolled to the top and beyond")
             canPrintMessage = false
             

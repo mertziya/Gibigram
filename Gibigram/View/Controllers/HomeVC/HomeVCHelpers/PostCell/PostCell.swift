@@ -16,8 +16,14 @@ class PostCell: UITableViewCell {
     
     @IBOutlet weak var postImage: UIImageView!
     
+    @IBOutlet weak var heartButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
     
-
+    @IBAction func saveButton(_ sender: UIButton) {
+        print("saved")
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

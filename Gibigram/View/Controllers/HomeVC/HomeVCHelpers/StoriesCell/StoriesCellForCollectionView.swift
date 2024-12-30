@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol StoryCellDelegate: AnyObject{
+    func didSelectStory(_ storyVC: StoryVC)
+}
+
 class StoriesCellForCollectionView : UICollectionViewCell , UICollectionViewDelegate, UICollectionViewDataSource{
     
     var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -21,7 +25,6 @@ class StoriesCellForCollectionView : UICollectionViewCell , UICollectionViewDele
             }
         }
     }
-    
     var isOpened : Bool = false{
         didSet{
             DispatchQueue.main.async {
@@ -29,6 +32,9 @@ class StoriesCellForCollectionView : UICollectionViewCell , UICollectionViewDele
             }
         }
     }
+    var user: User?
+    var delegate: StoryCellDelegate?
+    
     
     // MARK: - Lifecycles:
     
@@ -73,10 +79,17 @@ class StoriesCellForCollectionView : UICollectionViewCell , UICollectionViewDele
             return UICollectionViewCell()
         }
         cell.storyImage.kf.setImage(with: URL(string: self.stories[indexPath.row].storyImageURL ?? ""))
-        cell.storyName.text = self.stories[indexPath.row].storyName
+        
         cell.storyBounds.image = self.isOpened ? .storyBoundOpened : .storyBounds
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = StoryVC()
+        vc.story = self.stories[indexPath.row]
+        vc.user = self.user
+        self.delegate?.didSelectStory(vc)
     }
 }
 

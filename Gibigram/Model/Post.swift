@@ -10,6 +10,7 @@ import Foundation
 struct Post : Codable {
     var postID : String?
     var userID : String?
+    var postLocation : String?
     var postImageURL : String?
     var postDescription : String?
     var postComments : [[String:String]]?
