@@ -181,13 +181,16 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="commentButton" destination="X2i-UY-37q" id="MVG-HY-jNZ"/>
+                <outlet property="descriptionLabel" destination="Pk6-xY-7Ze" id="adr-oH-jHW"/>
                 <outlet property="ellipsisButton" destination="OGP-PE-msB" id="lm3-SP-qIV"/>
                 <outlet property="heartButton" destination="ykg-6a-k5e" id="Ffb-k1-JeU"/>
+                <outlet property="likesLabel" destination="euD-M8-LVv" id="zhN-5b-Otx"/>
                 <outlet property="postImage" destination="lod-oC-thi" id="PEd-R0-C1u"/>
                 <outlet property="postLocation" destination="Fqf-7E-2yS" id="C9L-aq-6vE"/>
                 <outlet property="profileImage" destination="d13-qb-SoE" id="TbP-py-6fY"/>
                 <outlet property="profileName" destination="CfW-Da-yQA" id="0fT-5Q-fBU"/>
                 <outlet property="sendButton" destination="MCg-ac-rdE" id="5Qr-0R-zhS"/>
+                <outlet property="usernameLabel" destination="KA7-f4-2fX" id="GxU-u4-SuG"/>
             </connections>
             <point key="canvasLocation" x="-195.41984732824426" y="-271.47887323943661"/>
         </tableViewCell>

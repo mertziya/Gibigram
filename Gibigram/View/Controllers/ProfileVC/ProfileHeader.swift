@@ -51,6 +51,7 @@ class ProfileHeader: UICollectionReusableView {
         self.profileImage.clipsToBounds = true
         self.profileImage.layer.cornerRadius = profileImage.frame.width / 2
         self.profileImage.contentMode = .scaleAspectFill
+        self.profileImage.image = UIImage(systemName: "plus")
         
     }
     
@@ -72,7 +73,12 @@ class ProfileHeader: UICollectionReusableView {
 
     private func updateUI(with user: User?) {
         if let user = user {
-            self.profileImage.kf.setImage(with: URL(string: user.profileImageURL!))
+            if let profileImageURL = user.profileImageURL, user.profileImageURL != ""{
+                self.profileImage.kf.setImage(with: URL(string: profileImageURL))
+            }else{
+                self.profileImage.image = UIImage(systemName: "plus")
+                self.profileImage.tintColor = .link
+            }
             
             self.postNumberLabel.text = String(describing: user.posts!.count)
             self.followerNumberLabel.text = String(describing: user.followers!.count)
@@ -80,9 +86,6 @@ class ProfileHeader: UICollectionReusableView {
             
             self.profileNameLabel.text = user.username
             self.profileSummaryLabel.text = user.summary
-                        
-        } else {
-            print("User = nil")
         }
     }
     

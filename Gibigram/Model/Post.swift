@@ -15,5 +15,8 @@ struct Post : Codable {
     var postDescription : String?
     var postComments : [[String:String]]?
     var postLikes : Int?
+    var username: String?
+    var fullname : String?
+    var profileImageURL : String?
     
 }

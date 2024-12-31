@@ -12,10 +12,18 @@ class HomeVC: UIViewController {
     // MARK: - UI Component:     
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Properties:
+    var viewmodel = HomeVM()
+    var homePosts : [Post]?
+    var userForPost : User?
+    var isWait = true // For swiping up to reload data gesture
     
     // MARK: Lifecylces:
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewmodel.delegate = self
+        viewmodel.getPostsForTable()
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorColor = .white
@@ -24,25 +32,45 @@ class HomeVC: UIViewController {
         
         setNavigationBar() // configures the navbar for this screen.
         tableView.showsVerticalScrollIndicator = false // hides the indicator that apears right at the tableview.
+        
+        tableView.alwaysBounceVertical = true
     }
     
 }
 
 
 // MARK: - Table View Configurations:
-extension HomeVC: UITableViewDelegate, UITableViewDataSource{
+extension HomeVC: UITableViewDelegate, UITableViewDataSource, HomeVMDelegate, presentStoryDelegate{
+    func didOpenStory(vc: UIViewController) {
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    func didFailWithError(error: any Error) {
+        print("error")
+    }
+    
+    func didFetchTargetedPosts(posts: [Post]?) {
+        print("worked")
+        
+        DispatchQueue.main.async {
+            self.homePosts = posts
+            self.tableView.reloadData()
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return (self.homePosts?.count ?? 0) + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let index = indexPath.row - 1
         if indexPath.row == 0{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "StoriesCell", for: indexPath) as? StoriesCell else{
                 print("DEBUG: couldn't get the cell")
                 return UITableViewCell()
             }
+            cell.viewmodel.fetchStoriesOfFollowedUser()
+            cell.delegate = self
             
             return cell
         }else{
@@ -50,7 +78,20 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
                 print("DEBUG: couldn't get the cell")
                 return UITableViewCell()
             }
+            guard let posts = self.homePosts else{return UITableViewCell()}
             
+            guard let postImageURLstring = posts[index].postImageURL else{print("POST IMAGE ERROR") ; return UITableViewCell()}
+            let profileImageURLstring = posts[index].profileImageURL ?? "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fgaleri2.uludagsozluk.com%2F208%2F404error_305098.jpg&f=1&nofb=1&ipt=5207989fdb42f65dd3b05537aa5ceab66d7ed6fba8a6500206eaee6d37d990d4&ipo=images"
+            
+            let postImageURL = URL(string: postImageURLstring)
+            let profileImageURL = URL(string: profileImageURLstring)
+            cell.postImage.kf.setImage(with: postImageURL)
+            cell.profileImage.kf.setImage(with: profileImageURL)
+            cell.postLocation.text = posts[index].postLocation
+            cell.profileName.text = posts[index].fullname
+            cell.likesLabel.text = "\(String(describing: posts[index].postLikes ?? 0)) Likes"
+            cell.usernameLabel.text = posts[index].username
+            cell.descriptionLabel.text = posts[index].postDescription
             
             
             return cell
@@ -65,6 +106,21 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
             return self.view.frame.height * 0.75
         }
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yOffSet = scrollView.contentOffset.y
+        if yOffSet < -150 && isWait {
+            print("Scrolled to the top and beyond")
+            self.isWait = false
+            
+            viewmodel.getPostsForTable()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                self.isWait = true
+            }
+        }
+    }
+    
 }
 
 
@@ -120,6 +176,6 @@ extension HomeVC {
     }
     
     @objc private func toCamera(){
-        
+        tabBarController?.selectedIndex = 2
     }
 }

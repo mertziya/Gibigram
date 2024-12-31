@@ -56,25 +56,41 @@ class PostService{
         }
     }
     
-    static func uploadPost(post: Post , completion: @escaping (Result<String,Error>) -> ()){
+    static func uploadPost(post: Post, completion: @escaping (Result<String, Error>) -> Void) {
         let documentID = post.postID ?? UUID().uuidString
-        let data : [String:Any] = [
-            "postID" : documentID,
-            "userID" : Auth.auth().currentUser?.uid ?? "",
-            "postLocation" : post.postLocation ?? "",
-            "postImageURL" : post.postImageURL ?? "",
-            "postDescription" : post.postDescription ?? "",
-            "postComments" : [[:]],
-            "postLikes" : post.postLikes ?? 0,
-        ]
+        let userID = Auth.auth().currentUser!.uid
         
-        let postDocument = Firestore.firestore().collection("posts")
-        // Set the data with the specified document ID
-        postDocument.document(documentID).setData(data) { error in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                completion(.success(documentID)) // Return the document ID as the success result
+        // Fetch the current user data
+        Firestore.firestore().collection("users").document(userID).getDocument(as: User.self) { result in
+            switch result {
+            case .failure(let error):
+                completion(.failure(error)) // Fail early if fetching user data fails
+            case .success(let currentUserData):
+                // Construct the data dictionary after fetching the user data
+                let data: [String: Any] = [
+                    "postID": documentID,
+                    "userID": userID,
+                    "postLocation": post.postLocation ?? "",
+                    "postImageURL": post.postImageURL ?? "",
+                    "postDescription": post.postDescription ?? "",
+                    "postComments": [[:]],
+                    "postLikes": post.postLikes ?? 0,
+                    
+                    // User-related data
+                    "username": currentUserData.username ?? "",
+                    "fullname": currentUserData.fullname ?? "",
+                    "profileImageURL": currentUserData.profileImageURL ?? ""
+                ]
+                
+                // Upload the post
+                let postDocument = Firestore.firestore().collection("posts")
+                postDocument.document(documentID).setData(data) { error in
+                    if let error = error {
+                        completion(.failure(error)) // Fail if setting data fails
+                    } else {
+                        completion(.success(documentID)) // Success, return document ID
+                    }
+                }
             }
         }
     }
@@ -94,10 +110,66 @@ class PostService{
                 completion(nil)
             }
         }
-        
-        
-                
     }
     
+    static func fetchPostsOfFollowedUsers(completion: @escaping (Result<[Post]?, Error>) -> ()) {
+        guard let currentUID = Auth.auth().currentUser?.uid else {
+            return
+        }
+        let userCollection = Firestore.firestore().collection("users")
+        let postCollection = Firestore.firestore().collection("posts")
+        
+        userCollection.document(currentUID).getDocument(as: User.self) { result in
+            switch result {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let user):
+                guard let followingsUserIDs = user.followings, !followingsUserIDs.isEmpty else {
+                    completion(.success(nil))
+                    return
+                }
+                
+                var posts: [Post] = []
+                let dispatchGroup = DispatchGroup() // To synchronize asynchronous calls
+                
+                for id in followingsUserIDs {
+                    dispatchGroup.enter()
+                    userCollection.document(id).getDocument(as: User.self) { result in
+                        switch result {
+                        case .failure(let error):
+                            dispatchGroup.leave()
+                            completion(.failure(error))
+                            return
+                        case .success(let followedUser):
+                            guard let postIDs = followedUser.posts else {
+                                dispatchGroup.leave()
+                                return
+                            }
+                            
+                            for postID in postIDs {
+                                dispatchGroup.enter()
+                                postCollection.document(postID).getDocument(as: Post.self) { result in
+                                    switch result {
+                                    case .failure(let error):
+                                        dispatchGroup.leave()
+                                        completion(.failure(error))
+                                        return
+                                    case .success(let post):
+                                        posts.append(post)
+                                        dispatchGroup.leave()
+                                    }
+                                }
+                            }
+                            dispatchGroup.leave() // THIS PART
+                        }
+                    }
+                }
+                
+                dispatchGroup.notify(queue: .main) { // THIS PART
+                    completion(.success(posts))
+                }
+            }
+        }
+    }
     
 }

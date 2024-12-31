@@ -29,11 +29,11 @@ class LoginVC: UIViewController {
 
 extension LoginVC {
     private func textfieldConfigurations(){
-        self.emailTextField.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [
+        self.emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [
             .foregroundColor : UIColor.label.withAlphaComponent(0.6)
         ])
         
-        self.passwordTextField.attributedPlaceholder = NSAttributedString(string: "Passwrod", attributes: [
+        self.passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [
             .foregroundColor : UIColor.label.withAlphaComponent(0.6)
         ])
         emailTextField.layer.cornerRadius = 4

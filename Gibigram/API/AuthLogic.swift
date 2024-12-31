@@ -23,6 +23,7 @@ class AuthLogic {
         Auth.auth().createUser(withEmail: credentials.email, password: credentials.password) { result, error in
             if let error = error {
                 completion(error)
+                return
             }
             guard let uid = result?.user.uid else {return}
             
@@ -35,8 +36,8 @@ class AuthLogic {
                                          ,"profileImageURL" : ""
                                          ,"posts" : [String]()
                                          ,"stories" : [String]()
-                                         ,"followings" : [User]()
-                                         ,"followers" : [User]()
+                                         ,"followings" : [uid]
+                                         ,"followers" : [uid]
             ]
             
             let users = Firestore.firestore().collection("users")

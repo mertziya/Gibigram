@@ -81,6 +81,7 @@ class StoriesCellForCollectionView : UICollectionViewCell , UICollectionViewDele
         cell.storyImage.kf.setImage(with: URL(string: self.stories[indexPath.row].storyImageURL ?? ""))
         
         cell.storyBounds.image = self.isOpened ? .storyBoundOpened : .storyBounds
+        cell.storyName.text = stories[indexPath.row].storyDescription
         
         return cell
     }

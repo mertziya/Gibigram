@@ -102,7 +102,61 @@ class StoryService{
                 completion(nil)
             }
         }
+    }
+    
+    static func fetchStoriesOfFollowedUser(completion: @escaping (Result<[Story]?,Error>) -> () ){
+        guard let userid = Auth.auth().currentUser?.uid else{completion(.failure(ErrorType.userIDerror)) ; return}
+        let userCollection = Firestore.firestore().collection("users")
+        let storyCollection = Firestore.firestore().collection("stories")
         
+        userCollection.document(userid).getDocument(as: User.self) { result in
+            switch result{
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let user):
+                guard let followingUserIDs = user.followings , !followingUserIDs.isEmpty else {
+                    completion(.success(nil))
+                    return
+                }
+                
+                var stories : [Story] = []
+                let dispatchGroup = DispatchGroup()
+                
+                for followingID in followingUserIDs {
+                    dispatchGroup.enter()
+                    userCollection.document(followingID).getDocument(as: User.self) { result in
+                        switch result{
+                        case .failure(let error):
+                            dispatchGroup.leave()
+                            completion(.failure(error))
+                            return
+                        case .success(let followedUser):
+                            guard let storiesIDArray = followedUser.stories else{
+                                dispatchGroup.leave()
+                                return
+                            }
+                            
+                            for storyID in storiesIDArray{
+                                dispatchGroup.enter() // Enter for each storyID
+                                storyCollection.document(storyID).getDocument(as: Story.self) { result in
+                                    switch result{
+                                    case .failure(let error):
+                                        completion(.failure(error))
+                                    case .success(let story):
+                                        stories.append(story)
+                                    }
+                                    dispatchGroup.leave() // Leave after story fetch
+                                }
+                            }
+                            dispatchGroup.leave()
+                        }
+                    }
+                }
+                dispatchGroup.notify(queue: .main) {
+                    completion(.success(stories))
+                }
+            }
+        }
     }
     
     

@@ -18,9 +18,9 @@ class ProfileVC: UIViewController {
     
     private var pickedImage = UIImage()
     private let imageUploader = ImageUploader()
-    private let profileHeaderVM = ProfileHeaderVM()
     private var cancellables = Set<AnyCancellable>()
     
+    private let profileHeaderVM = ProfileHeaderVM()
     private let profileVM = ProfileVM()
     
     var theUser : User? // For binding user.fullname to navigation title.
@@ -35,13 +35,17 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         profileVM.delegate = self
-        profileVM.fetchPostsOfCurrentUser()
-        profileVM.fetchStoriesOfCurrentUser()
         
         configureNavigationBar()
         self.configureProfileCollection()
         bindNavTitle()
         profileCollectionView.showsVerticalScrollIndicator = false
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        print("viewwillappear")
+        profileVM.fetchPostsOfCurrentUser()
+        profileVM.fetchStoriesOfCurrentUser()
+        profileHeaderVM.fetchUser()
     }
     
 

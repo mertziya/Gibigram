@@ -24,6 +24,12 @@ class PostCell: UITableViewCell {
         print("saved")
     }
     
+    @IBOutlet weak var likesLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

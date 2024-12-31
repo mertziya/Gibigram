@@ -21,7 +21,7 @@ struct UserService{
              let userCollection = Firestore.firestore().collection("users")
              userCollection.document(uid).getDocument(as: User.self) { result in
                  switch result {
-                 case .failure(let error):
+                 case .failure(_):
                      print("DEBUG: user cannot be fetched")
                      promise(.success(nil))
                  case .success(let user):
@@ -29,6 +29,18 @@ struct UserService{
                  }
              }
          }
+    }
+    
+    static func fetchUserForPostId(postID : String, completion: @escaping (Result<User,Error>) ->() ){
+        let postDoc = Firestore.firestore().collection("posts").document(postID)
+        postDoc.getDocument(as: User.self) { result in
+            switch result{
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let user):
+                completion(.success(user))
+            }
+        }
     }
 
   

@@ -49,6 +49,8 @@
 		C6D90E072D13902200E526F3 /* LikesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6D90E062D13902200E526F3 /* LikesVC.xib */; };
 		C6D90E082D13902200E526F3 /* LikesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90E052D13902200E526F3 /* LikesVC.swift */; };
 		C6D90E0C2D13902E00E526F3 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D90E092D13902E00E526F3 /* ProfileVC.swift */; };
+		C6DF4CF32D22B61E00A2B26E /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF4CF22D22B61E00A2B26E /* HomeVM.swift */; };
+		C6DF4CF52D22F96700A2B26E /* StoryCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF4CF42D22F96700A2B26E /* StoryCellVM.swift */; };
 		C6E325442D16B5340025F83C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6E325432D16B5340025F83C /* GoogleService-Info.plist */; };
 		C6FF7AD42D2187E00052B8F5 /* ShareImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF7AD32D2187E00052B8F5 /* ShareImageVC.swift */; };
 		C6FF7AD62D21F49A0052B8F5 /* ShareImageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF7AD52D21F49A0052B8F5 /* ShareImageVM.swift */; };
@@ -101,6 +103,8 @@
 		C6D90E052D13902200E526F3 /* LikesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesVC.swift; sourceTree = "<group>"; };
 		C6D90E062D13902200E526F3 /* LikesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikesVC.xib; sourceTree = "<group>"; };
 		C6D90E092D13902E00E526F3 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		C6DF4CF22D22B61E00A2B26E /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		C6DF4CF42D22F96700A2B26E /* StoryCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCellVM.swift; sourceTree = "<group>"; };
 		C6E325432D16B5340025F83C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C6FF7AD32D2187E00052B8F5 /* ShareImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareImageVC.swift; sourceTree = "<group>"; };
 		C6FF7AD52D21F49A0052B8F5 /* ShareImageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareImageVM.swift; sourceTree = "<group>"; };
@@ -261,6 +265,8 @@
 				C6618D662D19D26F00589650 /* ProfileHeaderVM.swift */,
 				C6618D6E2D1C05B200589650 /* ProfileVM.swift */,
 				C6FF7AD52D21F49A0052B8F5 /* ShareImageVM.swift */,
+				C6DF4CF22D22B61E00A2B26E /* HomeVM.swift */,
+				C6DF4CF42D22F96700A2B26E /* StoryCellVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -486,6 +492,7 @@
 				C6B95A0A2D16FCE100175EAE /* User.swift in Sources */,
 				C6B95A0E2D17281A00175EAE /* ImageUploader.swift in Sources */,
 				C6D90DE72D1358D200E526F3 /* SceneDelegate.swift in Sources */,
+				C6DF4CF32D22B61E00A2B26E /* HomeVM.swift in Sources */,
 				C6AB4E512D206A2E0070F07A /* StoryService.swift in Sources */,
 				C6AB4E552D20954F0070F07A /* PostVC.swift in Sources */,
 				C661FBDB2D1970C000415397 /* ProfileHeader.swift in Sources */,
@@ -493,6 +500,7 @@
 				C6618D672D19D26F00589650 /* ProfileHeaderVM.swift in Sources */,
 				C6618D692D1AC55E00589650 /* EditProfileVC.swift in Sources */,
 				C6A0B0302D142E25002C9420 /* Constants.swift in Sources */,
+				C6DF4CF52D22F96700A2B26E /* StoryCellVM.swift in Sources */,
 				C6AB4E572D20BD7D0070F07A /* StoryVC.swift in Sources */,
 				C6D90DF02D135AA300E526F3 /* TabController.swift in Sources */,
 				C6D90E082D13902200E526F3 /* LikesVC.swift in Sources */,
