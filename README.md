@@ -1,55 +1,42 @@
 # Gibigram 🚧
 ![In Progress](https://img.shields.io/badge/Project-In%20Progress-yellow?style=for-the-badge)
 
-Gibigram is a fun project inspired by the famous sitcom *Gibi*, designed
-with the basic structure of an Instagram-like app. Only characters from
-*Gibi* can use this app, making it a unique and entertaining experience.
+## Project Overview
+Gibigram is a project I built to learn and experiment with developing a mid-sized app. It’s inspired by Instagram but with a unique twist—it features characters from the popular sitcom “Gibi”, adding a playful and fun element to the experience.
 
-The primary goal of this project was to understand the development phases
-of a medium-sized app while implementing modern programming practices.
-## Objectives
+The primary focus of this project was to explore new development concepts, enhance my skills in building user-friendly interfaces, and gain hands-on experience with integrating backends and designing dynamic features.
 
-- Understand the development lifecycle of a medium-sized app by usin MVVM Architecture.  
-- Using Protocol Oriented Programming (POP), to create Custom Delegate Patterns to use in ViewModel files for testability.
-- Used Firebase for the business logic of the app and Parse(with back4app) for storing the images of the app.
-- Practiced building interface both with XIB Files and programatically to have a collective understanding of User Interfaces.
+PROJECT DEMO : https://www.dropbox.com/scl/fi/jdbtfjeioq6zlakm5ajwc/CurrentDemoGibigram.mp4?rlkey=mg5b52eoqj60ik4fff61nyyn4&st=vluox4xp&dl=0
 
-## Current Demo
+DESIGN FILE INSPIRED: https://www.figma.com/design/wxhhC2SYYhbdJPZPWoAll3/Instagram-UI-Screens-(Community)?node-id=0-2&p=f&t=xt6upVg6SlvItgRG-0
 
-https://github.com/user-attachments/assets/d8124dc6-88e5-4b2e-9e4a-ecb2cc637862
+OBJECTIVES LEARNED:
+- Using Programmatic UI to build Custom Views and User Interfaces.
+- Using XIB Files to build User Interface
+- Using Protocols to communicate between View and ViewModels, also between viewcontrollers
+- Using didSet to update the UI when needed
+- Details about collectionView and TableViews
+- Writing Service Functions with closures (Firebase is commonly used).
+- Using 2 backends Service Providers under one Project (Parse and Firebase).
+- Delegate Patterns and Singleton Patterns
+- Creating Custom Reusable Views both programitaclly and with XIB Files.
+- MVVM Architecture
+- Using Delegate Patterns to present a ViewController from a CollectionViewCell or TableViewCell.
+- Swiping Up to Reload data in table View. Even though there is not enough items in table view (always bounce)
+- Swiping Down to Dismiss a view Controller even though it is presented modally in fullscreen.
+- Setting up the UI Design and layoutaccording to Design made by designer (figma in this case)
+- Designing UML diagrams to make the business logic of the app with the help of Firebase Firestore.
+- Used YPImagePicker third party library to have an instagram like image picking interface
+- Using UIResponder for showing/hiding keyboard, together with notification pattern -UINotification- 
 
-## Features
 
-- **Protocol-Oriented Programming (POP)**:  
-  Used extensively to build delegates for ViewModel files, ensuring modular and reusable code.  
+THINGS THAT CAN BE IMPROVED:
+* Better Naming structring of the folders.
+* Used Nested Closures on some part of the code
+* Could be better at using DispatchGroup while coding services.
+* Notification Design Pattern Could be studied
 
-- **Instagram-Like Scrolling Experience**:  
-  Combined `CollectionViews` and `TableViews` for smooth and dynamic scrolling, replicating Instagram's interface.  
-
-- **Image Picking**:  
-  Integrated the **YPImagePicker** library for instagram like image picking and editing experience.
-
-- **Backend Services**:  
-  - **Firebase**: Serves as the primary database and Backend-as-a-Service (BaaS), managing the app's core business logic.  
-  - **Parse (via Back4App)**: Used exclusively for image storage, with image URLs stored in Firebase to keep logic centralized in Firebase. This approach avoids Firebase's paid storage feature.
- 
-## Status
-Completed:
-* Authentication Screens(Login, Register)
-* Feed Screen
-* ProfileScreen
-* Edit Profile Screen
-
-In Progress:
-* Search Screen
-* Add Image Screen
-* Followings Screen
-* Direct Messaging Screen (Using FirebaseMessaging)
-
-## Installation
-
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/your-repository/Gibigram.git
-   pod install
-   ```
+POTENTIAL IMPROVEMENTS ABOUT THE PROJECT:
+* Comment Section: where users can make comments to the posts. Comment will be stored as an array of dictionaries, including username as a key and comment as a value inside the dictionary of the array.
+* Liking Logic: a user should only like a post for once, so the post needs to have a liked by section with an array of users and if the person that is liking is currently inside that array that user should not be able to like that picture.
+* Direct Messaging with Firebase massaging
