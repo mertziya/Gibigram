@@ -2,7 +2,7 @@
 ![In Progress](https://img.shields.io/badge/Project-In%20Progress-yellow?style=for-the-badge)
 
 ## Project Overview
-Gibigram is a project I built to learn and experiment with developing a mid-sized app. It’s inspired by Instagram but with a unique twist—it features characters from the popular sitcom “Gibi”, adding a playful and fun element to the experience.
+Gibigram is a project I built from scratch to learn and experiment with developing a mid-sized app. It’s inspired by Instagram but with a unique twist—it features characters from the popular sitcom “Gibi”, adding a playful and fun element to the experience.
 
 The primary focus of this project was to explore new development concepts, enhance my skills in building user-friendly interfaces, and gain hands-on experience with integrating backends and designing dynamic features.
 
