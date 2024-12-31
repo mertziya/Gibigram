@@ -14,6 +14,8 @@ _*Demo Video*_ :  https://www.dropbox.com/scl/fi/jdbtfjeioq6zlakm5ajwc/CurrentDe
   <img src="https://github.com/user-attachments/assets/6b7666fc-f80a-4438-be47-c5fa5acff31e" alt="Login Screen" width="200">
   <img src="https://github.com/user-attachments/assets/9a6dcd1e-e876-4309-a7c2-c65b142c9ab4" alt="Profile Screen" width="200">
   <img src="https://github.com/user-attachments/assets/c2029f2f-fb3f-4ac3-bbc7-30f3006f1a6a" alt="Home Screen" width="200">
+  <img src="https://github.com/user-attachments/assets/4c0e6bb8-f1d2-476d-99d7-3d41bdf21ce5" alt="Gibigram UML"  width="200">
+
 </div>
 
 ## DESIGN FILE INSPIRED: 
